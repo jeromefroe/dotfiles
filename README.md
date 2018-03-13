@@ -5,6 +5,7 @@ This is my collection of dotfiles. It is organized into the following bash files
 * `.bash_prompt` - Bash prompt.
 * `.exports` - Exported variables.
 * `.extra` - Miscellaneous commands to run.
+* `.functions` - Bash functions.
 * `.path` - Additional directories added to my PATH.
 
 And the following Vim files and directories:
