@@ -42,3 +42,16 @@ calling `.bash_profile` instead of `.bashrc.`
 * [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html)
 * [Difference between ~/.profile and ~/.bash_profile](https://unix.stackexchange.com/questions/45684/difference-between-profile-and-bash-profile)
 * [Bash: about .bashrc, .bash_profile, .profile, /etc/profile, etc/bash.bashrc and others](http://stefaanlippens.net/bashrc_and_others/)
+
+## TODO
+
+- [ ] Make dotfiles OS-agnostic.
+    - Currently, this README recommends configuring one's `.bash_profile`. This works on Mac
+    terminals which create a new login shell for each new terminal. On most Linux systems,
+    however, it seems the preference is to open a login shell only when the user actually
+    logins. This means that when a new terminal is opened `.bashrc` is searched but not
+    `.bash_profile`. Consequently, I should look into make the dotfile OS-agnostic by setting
+    my dotfiles in `.bashrc` and sourcing `.bashrc` from `.bash_profile`. Will need to test
+    on a Linux box to test.
+- [ ] Add a script to install tools.
+    - I should add a script which installs all of the tools I use, for example Go, Rust, etc.

@@ -1,13 +1,41 @@
-# Go
-export GOPATH=$HOME/golang
-export GOROOT=/usr/local/opt/go/libexec
+#  ---------------------------------------------------------------------------
+#
+#  Description:  This file holds all my Bash exports.
+#
+#  Table of Contents:
+#  1.   Go
+#  2.   Rust
+#  3.   Python
+#  4.   Bash
+#
+#  ---------------------------------------------------------------------------
 
-# Racer:
+#   -------------------------------
+#   1. Go
+#   -------------------------------
+
+# Set requesite Gon environment variables.
+  export GOPATH=$HOME/golang
+  export GOROOT=/usr/local/opt/go/libexec
+
+#   -------------------------------
+#   2. Rust
+#   -------------------------------
+
+# Configuration required for Racer, see:
 # https://github.com/racer-rust/racer/blob/master/README.md#configuration
-export RUST_SRC_PATH=/usr/local/src/rust/src
+  export RUST_SRC_PATH=/usr/local/src/rust/src
 
-# Ensure python does not write bytecode.
-export PYTHONDONTWRITEBYTECODE=false
+#   -------------------------------
+#   3. Python
+#   -------------------------------
+
+# Ensure Python does not write bytecode.
+  export PYTHONDONTWRITEBYTECODE=false
+
+#   -------------------------------
+#   4. Bash
+#   -------------------------------
 
 # Avoid duplicates in .bash_history:
 # https://askubuntu.com/questions/15926/how-to-avoid-duplicate-entries-in-bash-history
