@@ -1,8 +1,19 @@
-# go
+# Go
 export GOPATH=$HOME/golang
 export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
 
-# rust
-export PATH=$PATH:/Users/jeromefroelich/.cargo/bin
+# Racer:
+# https://github.com/racer-rust/racer/blob/master/README.md#configuration
+export RUST_SRC_PATH=/usr/local/src/rust/src
 
+# Ensure python does not write bytecode.
+export PYTHONDONTWRITEBYTECODE=false
+
+# Avoid duplicates in .bash_history:
+# https://askubuntu.com/questions/15926/how-to-avoid-duplicate-entries-in-bash-history
+export HISTCONTROL=ignoreboth:erasedups
+
+# Increase size of .bash_history file:
+# https://askubuntu.com/questions/307541/how-to-change-history-size-for-ever
+export HISTSIZE=100000
+export HISTFILESIZE=100000

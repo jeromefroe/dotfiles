@@ -1,0 +1,16 @@
+# Go
+export PATH=$PATH:$GOPATH/bin
+
+# Rust
+export PATH=$PATH:/Users/jeromefroelich/.cargo/bin
+
+# go-torch:
+# https://github.com/uber/go-torch#get-the-flame-graph-script
+export PATH=$PATH:/Users/jeromefroelich/golang/src/github.com/uber/go-torch/FlameGraph
+
+# AWS client:
+# https://docs.aws.amazon.com/cli/latest/userguide/cli-install-macos.html#awscli-install-osx-path
+export PATH=$PATH:/Users/jeromefroelich/Library/Python/3.6/bin
+
+# Protocol buffers.
+export PATH=$PATH:/Users/jeromefroelich/src/protoc-3.0.0-osx-x86_64/bin
