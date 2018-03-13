@@ -9,7 +9,7 @@ export PATH=$PATH:/Users/jeromefroelich/.cargo/bin
 export PATH=$PATH:/Users/jeromefroelich/golang/src/github.com/uber/go-torch/FlameGraph
 
 # AWS client:
-# https://docs.aws.amazon.com/cli/latest/userguide/cli-install-macos.html#awscli-install-osx-path
+# `https://docs.aws.amazon.com/cli/latest/userguide/cli-install-macos.html#awscli-install-osx-path
 export PATH=$PATH:/Users/jeromefroelich/Library/Python/3.6/bin
 
 # Protocol buffers.
