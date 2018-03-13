@@ -42,4 +42,3 @@ calling `.bash_profile` instead of `.bashrc.`
 * [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html)
 * [Difference between ~/.profile and ~/.bash_profile](https://unix.stackexchange.com/questions/45684/difference-between-profile-and-bash-profile)
 * [Bash: about .bashrc, .bash_profile, .profile, /etc/profile, etc/bash.bashrc and others](http://stefaanlippens.net/bashrc_and_others/)
-*
