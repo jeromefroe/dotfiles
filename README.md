@@ -15,7 +15,7 @@ And the following Vim files and directories:
 The script `configure` assumes the above files are in the directory `$HOME/dev/dotfile`
 and will create a soft link to them from one's home directory (`$HOME`).
 
-To configure one's bash_profile then only the following needs to be added:
+To configure one's `.bash_profile` then only the following needs to be added:
 
 ```
 for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
