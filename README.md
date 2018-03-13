@@ -6,6 +6,9 @@ This is my collection of dotfiles. It is organized into the following bash files
 * `.exports` - Exported variables.
 * `.extra` - Miscellaneous commands to run.
 * `.path` - Additional directories added to my PATH.
+
+And the following Vim files and directories:
+
 * `.vim` - Vim plugin directory.
 * `.vimrc` - Vim configuration.
 
