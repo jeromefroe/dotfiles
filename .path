@@ -7,7 +7,8 @@
 #  2.   Rust
 #  3.   go-torch
 #  4.   AWS CLI
-#  5.   Protocol Buffers
+#  5.   Google Cloud SDK
+#  6.   Protocol Buffers
 #
 #  ---------------------------------------------------------------------------
 
@@ -21,7 +22,7 @@
 #   2. Rust
 #   -------------------------------
 
-  export PATH=$PATH:/Users/jeromefroelich/.cargo/bin
+  export PATH=$PATH:$HOME/.cargo/bin
 
 #   -------------------------------
 #   3. go-torch
@@ -29,7 +30,7 @@
 
 # go-torch requires that the following scripts can be found in one's PATH:
 # https://github.com/uber/go-torch#get-the-flame-graph-script
-  export PATH=$PATH:/Users/jeromefroelich/golang/src/github.com/uber/go-torch/FlameGraph
+  export PATH=$PATH:$GOPATH/src/github.com/uber/go-torch/FlameGraph
 
 #   -------------------------------
 #   4. AWS CLI
@@ -37,10 +38,18 @@
 
 # Documentation on AWS CLI:
 # https://docs.aws.amazon.com/cli/latest/userguide/cli-install-macos.html#awscli-install-osx-path
-  export PATH=$PATH:/Users/jeromefroelich/Library/Python/3.6/bin
+  export PATH=$PATH:$HOME/Library/Python/3.6/bin
 
 #   -------------------------------
-#   5. Protocol Buffers
+#   5. Google Cloud SDK
 #   -------------------------------
 
-  export PATH=$PATH:/Users/jeromefroelich/src/protoc-3.0.0-osx-x86_64/bin
+# Documentation on Google Cloud SDK:
+# https://cloud.google.com/sdk/docs/quickstart-macos
+  export PATH=$PATH:$HOME/google-cloud-sdk/bin
+
+#   -------------------------------
+#   6. Protocol Buffers
+#   -------------------------------
+
+  export PATH=$PATH:$HOME/src/protoc-3.0.0-osx-x86_64/bin
