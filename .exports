@@ -45,3 +45,7 @@ export HISTCONTROL=ignoreboth:erasedups
 # https://askubuntu.com/questions/307541/how-to-change-history-size-for-ever
 export HISTSIZE=100000
 export HISTFILESIZE=100000
+
+# Show normal history by default in hstr
+# https://github.com/dvorka/hstr/blob/master/CONFIGURATION.md#history-view
+export HH_CONFIG=rawhistory
