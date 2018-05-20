@@ -17,11 +17,15 @@
 
 # HSTR configuration:
 # https://github.com/dvorka/hstr#configuration
+# Note that I changed the order of PROMPT_COMMAND to ensure that the history commands
+# are run after the PROMPT_COMMAND since I use the exit code of the previous commands
+# to determine the color of the following prompt. I also increased HISTFILESIZE from
+# the default.
 export HH_CONFIG=hicolor         # get more colors
 shopt -s histappend              # append new history items to .bash_history
 export HISTCONTROL=ignorespace   # leading space hides commands from history
-export HISTFILESIZE=10000        # increase history file size (default is 500)
+export HISTFILESIZE=100000       # increase history file size (default is 500)
 export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
-export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
+export PROMPT_COMMAND="${PROMPT_COMMAND}; history -a; history -n"   # mem/file sync
 # if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
