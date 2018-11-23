@@ -25,8 +25,9 @@
 # Version 2.0 make backwards incompatible changes such that all environment
 # variables are now prefixed with HSTR instead of HH. I include both versions
 # for now until I update to 2.0 (it's not yet available in homebrew).
-export HSTR_CONFIG=hicolor       # get more colors
-export HH_CONFIG=hicolor
+export HSTR_CONFIG="hicolor,raw-history-view"
+export HH_CONFIG="hicolor,rawhistory"
+
 shopt -s histappend              # append new history items to .bash_history
 export HISTCONTROL=ignorespace   # leading space hides commands from history
 export HISTFILESIZE=100000       # increase history file size (default is 500)
