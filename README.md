@@ -39,9 +39,9 @@ to the above rules and runs a login shell by default for each new terminal windo
 calling `.bash_profile` instead of `.bashrc.`
 
 #### Resources
-* [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html)
-* [Difference between ~/.profile and ~/.bash_profile](https://unix.stackexchange.com/questions/45684/difference-between-profile-and-bash-profile)
-* [Bash: about .bashrc, .bash_profile, .profile, /etc/profile, etc/bash.bashrc and others](http://stefaanlippens.net/bashrc_and_others/)
+* [.bash_profile vs .bashrc]
+* [Difference between ~/.profile and ~/.bash_profile]
+* [Bash: about .bashrc, .bash_profile, .profile, /etc/profile, etc/bash.bashrc and others]
 
 ## TODO
 
@@ -55,3 +55,18 @@ calling `.bash_profile` instead of `.bashrc.`
     on a Linux box to test.
 - [ ] Add a script to install tools.
     - I should add a script which installs all of the tools I use, for example Go, Rust, etc.
+
+## Homebrew
+
+Included in this directory is also a `Brewfile` listing Homebrew packages that should be
+installed. I'm still experimenting wiht this file and it is currently just a subset of
+all the packages I actually have installed. The blog post
+[Restore, Clone or Backup your Homebrew Setup] provides a great overview of how to create
+a Brewfile and restore from one. I also found the command `brew leaves` to be helpful since,
+as [this StackExchange post] notes, it will display all top-level packages.
+
+[.bash_profile vs .bashrc]: http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html
+[Difference between ~/.profile and ~/.bash_profile]: https://unix.stackexchange.com/questions/45684/difference-between-profile-and-bash-profile
+[Bash: about .bashrc, .bash_profile, .profile, /etc/profile, etc/bash.bashrc and others]: http://stefaanlippens.net/bashrc_and_others/
+[Restore, Clone or Backup your Homebrew Setup]: https://tomlankhorst.nl/brew-bundle-restore-backup/
+[this StackExchange post]: https://apple.stackexchange.com/questions/101090/list-of-all-packages-installed-using-homebrew
