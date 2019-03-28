@@ -23,10 +23,8 @@
 # the default.
 #
 # Version 2.0 make backwards incompatible changes such that all environment
-# variables are now prefixed with HSTR instead of HH. I include both versions
-# for now until I update to 2.0 (it's not yet available in homebrew).
+# variables are now prefixed with HSTR instead of HH.
 export HSTR_CONFIG="hicolor,raw-history-view"
-export HH_CONFIG="hicolor,rawhistory"
 
 shopt -s histappend              # append new history items to .bash_history
 export HISTCONTROL=ignorespace   # leading space hides commands from history

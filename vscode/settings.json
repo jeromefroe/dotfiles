@@ -1,0 +1,71 @@
+{
+    "go.buildOnSave": "package",
+    "go.lintOnSave": "package",
+    "go.vetOnSave": "package",
+    "go.buildFlags": [],
+    "go.lintFlags": [],
+    "go.vetFlags": [],
+    "go.testFlags": [
+        "-v",
+    ],
+    "go.testTimeout": "10s",
+    "go.coverOnSave": false,
+    "go.useCodeSnippetsOnFunctionSuggest": false,
+    "go.gopath": "/Users/jeromefroelich/golang",
+    "go.formatTool": "goreturns",
+    "editor.cursorBlinking": "smooth",
+    "editor.tabSize": 2,
+    "editor.glyphMargin": true,
+    "editor.lineNumbers": "on",
+    "editor.rulers": [
+        100
+    ],
+    "editor.formatOnType": true,
+    "editor.scrollBeyondLastLine": false,
+    "editor.renderIndentGuides": true,
+    "editor.fontSize": 12,
+    // "editor.renderWhitespace": true,
+    "files.exclude": {
+        "**/.tmp": true,
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "go-build/.go": true,
+        ".vscode": true,
+        "env": true,
+        "env_docs": true,
+        "**/*.test": true,
+        "Godeps/_workspace": true,
+        "**/coverage.html": true,
+        "**/_build": true
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.autoSave": "onFocusChange",
+    "terminal.integrated.shellArgs.osx": [
+        "-l"
+    ],
+    "workbench.iconTheme": null,
+    "window.zoomLevel": -1,
+    // TODO: Update this to nightly once it stabilizes.
+    // See https://internals.rust-lang.org/t/nightlies-missing-the-rls-will-no-longer-be-produced/6653/4
+    "rust-client.channel": "nightly",
+    // Need to enable this to ensure rustfmt is run on save.
+    "editor.formatOnSave": true,
+    "gitlens.keymap": "chorded",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true
+    },
+    "extensions.ignoreRecommendations": false,
+    // Disable inline author details.
+    // "gitlens.codeLens.enabled": false,
+    // Validation for Kubernetes manifests
+    "yaml.schemas": {
+        "kubernetes": "manifests/*"
+    }
+}

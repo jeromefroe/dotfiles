@@ -4,9 +4,7 @@
 #
 #  Table of Contents:
 #  1.   Go
-#  2.   Rust
-#  3.   Python
-#  4.   Bash
+#  2.   Python
 #
 #  ---------------------------------------------------------------------------
 
@@ -16,23 +14,10 @@
 
 # Set requesite Gon environment variables.
   export GOPATH=$HOME/golang
-  export GOROOT=/usr/local/opt/go/libexec
 
 #   -------------------------------
-#   2. Rust
-#   -------------------------------
-
-# Configuration required for Racer, see:
-# https://github.com/racer-rust/racer/blob/master/README.md#configuration
-  export RUST_SRC_PATH=/usr/local/src/rust/src
-
-#   -------------------------------
-#   3. Python
+#   2. Python
 #   -------------------------------
 
 # Ensure Python does not write bytecode.
   export PYTHONDONTWRITEBYTECODE=false
-
-#   -------------------------------
-#   4. Bash
-#   -------------------------------
