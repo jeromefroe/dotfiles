@@ -11,7 +11,6 @@
     "go.testTimeout": "10s",
     "go.coverOnSave": false,
     "go.useCodeSnippetsOnFunctionSuggest": false,
-    "go.gopath": "/Users/jeromefroelich/golang",
     "go.formatTool": "goreturns",
     "editor.cursorBlinking": "smooth",
     "editor.tabSize": 2,
@@ -44,7 +43,7 @@
         "-l"
     ],
     "workbench.iconTheme": null,
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 0,
     // TODO: Update this to nightly once it stabilizes.
     // See https://internals.rust-lang.org/t/nightlies-missing-the-rls-will-no-longer-be-produced/6653/4
     "rust-client.channel": "nightly",
