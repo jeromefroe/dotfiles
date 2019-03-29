@@ -12,6 +12,8 @@
 	<string>manual</string>
 	<key>Default Bookmark Guid</key>
 	<string>A1268A8C-A66C-4569-9171-D470EE7CC41A</string>
+	<key>DimInactiveSplitPanes</key>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
@@ -57,7 +59,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>335 272 796 486 0 0 1280 777 </string>
+	<string>1221 860 796 486 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>174 261 570 452 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
