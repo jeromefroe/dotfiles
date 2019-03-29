@@ -54,6 +54,12 @@ cd dotfiles
 ./configure.sh
 ```
 
+It's worth noting that in some setups, most notably my work environment, the developer tooling
+will often make changes to `.bash_profile`. In these cases, it's better to not link `.bash_profile`
+but rather to add the contents of `.bash_profile` in this repo to the end of the file. This
+isn't a big problem in practice because the repo is set up such that `.bash_profile` should
+be pretty simple and need only source the other files which are stored in this repo.
+
 ## 5. Install Homebrew
 
 Install Homebrew with the following command:
