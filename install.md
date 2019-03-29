@@ -6,6 +6,9 @@
 Direction: Natural".
 * If applications icons continue to stay in the dock after quitting navigate to System
 Preferences > Dock > "Show recent applications in Dock".
+* To sync your iCloud account to your Mac navigate to System Preferences > iCloud and add
+your Apple account. Note that the passcode for your phone is the one you enter on the lock
+screen.
 
 ## 1. Setup Chrome
 
