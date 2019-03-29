@@ -1,9 +1,11 @@
 # Laptop Recovery
 
-## 0. Update Scroll Settings
+## 0. Update System UX Settings
 
-If scroll feels unnatural, update it by navigating to System Preferences > Trackpad > "Scroll
+* If scroll feels unnatural, update it by navigating to System Preferences > Trackpad > "Scroll
 Direction: Natural".
+* If applications icons continue to stay in the dock after quitting navigate to System
+Preferences > Dock > "Show recent applications in Dock".
 
 ## 1. Setup Chrome
 
@@ -97,11 +99,11 @@ go get -u github.com/go-delve/delve/cmd/dl
 
   1. Dropbox
   2. Alfred
-     - First add the Powerpack license by navigating to Alfred Preferences > Powerpack. My license
+     * First add the Powerpack license by navigating to Alfred Preferences > Powerpack. My license
       is stored in LastPass.
-     - Enable syncing of preferences with Dropbox by navigating to Advanced > Set preferences
+     * Enable syncing of preferences with Dropbox by navigating to Advanced > Set preferences
        folder > `Dropbox/Sync/Alfred`.
-     - Enable storing Clipboard History by navigating to Features > Clipboard and set "Keep Plain
+     * Enable storing Clipboard History by navigating to Features > Clipboard and set "Keep Plain
        Text" to 3 months.
   3. Spotify
   4. Evernote
@@ -158,3 +160,12 @@ go get -u github.com/go-delve/delve/cmd/dl
      mv aws_credentials.txt ~/.aws/credentials
      aws configure
      ```
+
+  8. Git
+
+      Run the following commands to set global Git configuration options:
+
+      ```bash
+      git config --global user.email "email@example.com"
+      git config --global user.name "John Doe"
+      ```
