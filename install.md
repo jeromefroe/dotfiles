@@ -99,6 +99,7 @@ git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
 # Install mssh
 curl https://gist.githubusercontent.com/dgromov/350c6d80f65ba2bedf63ac168bcd788f/raw/d5f139a1cfeeb7a747aa5d09942ec31fdb79a757/mssh.py \
  -o ~/dev/mssh.py
+chmod +x ~/dev/mssh.py
 
 # Install Delve
 go get -u github.com/go-delve/delve/cmd/dl
