@@ -179,3 +179,10 @@ go get -u github.com/go-delve/delve/cmd/dl
       git config --global user.email "email@example.com"
       git config --global user.name "John Doe"
       ```
+
+  9. Docker
+
+     As discussed in [this Stack answer], one needs to open the Docker application after it is
+     installed by Homebrew since its needs sudo privileges.
+
+[this Stack answer]: https://stackoverflow.com/questions/40523307/brew-install-docker-does-not-include-docker-engine#answer-43365425
