@@ -122,20 +122,35 @@ go get -u github.com/go-delve/delve/cmd/dl
 
 ## 10. Configure some stuff
 
-  1. Dash
+  1. Bash
+
+     By default, Mac ships with an old version of `bash`. The `Brewfile` will install a newer
+     version (which supports command completion), but there are two additional steps we need
+     to complete to make the newer version of `bash` the default shell. First, we need to add
+     the path to the newer version of `bash` which Homebrew installs to the whitelist of shells
+     that can be used as login shells in `/etc/shells`. Once that step is complete we can actually
+     go ahead and make the newer `bash` the default for login shells. The steps come from the
+     blog post [Upgrading Bash on macOS] which dives into more detail on them.
+
+     ```bash
+     echo '/usr/local/bin/bash' | sudo tee -a /etc/shells
+     sudo chsh -s /usr/local/bin/bash
+     ```
+
+  2. Dash
 
      Download Go, Rust, and Python 3 docs.
 
-  2. Magnet
+  3. Magnet
 
      Open application and follow instructions to authorize.
 
-  3. iTerm2
+  4. iTerm2
 
      To load our stored preferences, navigate to General > "Preferences and check Load Preferences
      from a Custom folder or URL" and then select `~/dev/dotfiles/iterm`.
 
-  4. VS Code
+  5. VS Code
 
      Run the following command to install extensions:
 
@@ -149,17 +164,17 @@ go get -u github.com/go-delve/delve/cmd/dl
 
          `cp ~/dev/dotfiles/vscode/keybindings.json "$HOME/Library/Application Support/Code/User/keybindings.json"`
 
-  5. Rust
+  6. Rust
 
      Run the following command to initialize `rustup`: `rustup-init`. During initialization I
      chose not to modify my `.bash_profile` to add Cargo's `bin` directory to my path since I've
      aready done that.
 
-  6. Google Cloud SDK
+  7. Google Cloud SDK
 
      Run the following command initialize the Google Cloud SDK: `gcloud init`.
 
-  7. AWS CLI
+  8. AWS CLI
 
      The first step to configuring the AWS CLI is to download my credentials from LastPass. They
      are stored in Auth > SSH Keys and Credentials as aws_credentials.txt. We need to move them
@@ -171,7 +186,7 @@ go get -u github.com/go-delve/delve/cmd/dl
      aws configure
      ```
 
-  8. Git
+  9. Git
 
       Run the following commands to set global Git configuration options:
 
@@ -180,9 +195,15 @@ go get -u github.com/go-delve/delve/cmd/dl
       git config --global user.name "John Doe"
       ```
 
-  9. Docker
+  10. Docker
 
      As discussed in [this Stack answer], one needs to open the Docker application after it is
-     installed by Homebrew since its needs sudo privileges.
+     installed by Homebrew since its needs sudo privileges. In addition, Homebrew doesn't
+     automatically include Docker's bash completion script so we need to grab it manually:
 
+     ```bash
+     curl -o /usr/local/etc/bash_completion.d/docker https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker
+     ```
+
+[Upgrading Bash on macOS]: https://itnext.io/upgrading-bash-on-macos-7138bd1066ba
 [this Stack answer]: https://stackoverflow.com/questions/40523307/brew-install-docker-does-not-include-docker-engine#answer-43365425

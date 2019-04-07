@@ -5,6 +5,7 @@
 #  Table of Contents:
 #  1.   Go
 #  2.   Python
+#  3.   Bash
 #
 #  ---------------------------------------------------------------------------
 
@@ -13,11 +14,17 @@
 #   -------------------------------
 
 # Set requesite Gon environment variables.
-  export GOPATH=$HOME/golang
+export GOPATH=$HOME/golang
 
 #   -------------------------------
 #   2. Python
 #   -------------------------------
 
 # Ensure Python does not write bytecode.
-  export PYTHONDONTWRITEBYTECODE=false
+export PYTHONDONTWRITEBYTECODE=false
+
+#   -------------------------------
+#   3. Bash
+#   -------------------------------
+# Set Bash completion directory so completion files are sourced automatically.
+export BASH_COMPLETION_COMPAT_DIR=/usr/local/etc/bash_completion.d/

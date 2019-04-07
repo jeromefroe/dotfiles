@@ -11,6 +11,8 @@ brew "kubernetes-cli"
 brew "jsonnet"
 
 ### CLI Tools
+brew "bash"
+brew "bash-completion@2"
 brew "hh"
 brew "jq"
 brew "tree"
