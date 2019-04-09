@@ -6,7 +6,8 @@
 #  1.   SCM Breeze
 #  2.   HSTR
 #  3.   Bash Completion
-#  4.   Autojump
+#  4.   autojump
+#  5.   direnv
 #
 #  ---------------------------------------------------------------------------
 
@@ -47,6 +48,11 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 #   -------------------------------
-#   4. Autojump
+#   4. autojump
 #   -------------------------------
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+#   -------------------------------
+#   5. direnv
+#   -------------------------------
+eval "$(direnv hook bash)"
