@@ -188,7 +188,9 @@ go get -u github.com/go-delve/delve/cmd/dl
 
   9. Git
 
-      Run the following commands to set global Git configuration options:
+      Run the following commands to set global Git configuration options. The first set the default
+      email and name for commits and the third ensures that when one runs `git push`, `git` will
+      assume that the user is pushing the current branch.
 
       ```bash
       git config --global user.email "email@example.com"
