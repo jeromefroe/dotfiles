@@ -193,6 +193,7 @@ go get -u github.com/go-delve/delve/cmd/dl
       ```bash
       git config --global user.email "email@example.com"
       git config --global user.name "John Doe"
+      git config --global push.default current
       ```
 
   10. Docker

@@ -8,6 +8,7 @@ brew "rustup"
 
 ### Kubernetes
 brew "kubernetes-cli"
+brew "kubectx"
 brew "jsonnet"
 
 ### CLI Tools
@@ -18,6 +19,7 @@ brew "jq"
 brew "tree"
 brew "autojump"
 brew "direnv"
+brew "tig"
 brew "shellcheck"
 brew "shfmt"
 brew "protobuf"
