@@ -6,6 +6,7 @@
 #  1.   SCM Breeze
 #  2.   HSTR
 #  3.   Bash Completion
+#  4.   Autojump
 #
 #  ---------------------------------------------------------------------------
 
@@ -44,3 +45,8 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
 #   3. Bash Completion
 #   -------------------------------
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+#   -------------------------------
+#   4. Autojump
+#   -------------------------------
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
