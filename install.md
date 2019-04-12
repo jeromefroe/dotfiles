@@ -188,14 +188,17 @@ go get -u github.com/go-delve/delve/cmd/dl
 
   9. Git
 
-      Run the following commands to set global Git configuration options. The first set the default
-      email and name for commits and the third ensures that when one runs `git push`, `git` will
-      assume that the user is pushing the current branch.
+      Run the following commands to set global Git configuration options. The first two commands
+      set the default email and name for commits respectively, the third command ensures that when
+      one runs `git push`, `git` will assume that the user is pushing the current branch, and the
+      fourth command configures the [`git-secrets`] plugin to check all commit for AWS credentials
+      which may have been added accidentally.
 
       ```bash
       git config --global user.email "email@example.com"
       git config --global user.name "John Doe"
       git config --global push.default current
+      git secrets --register-aws --global
       ```
 
   10. Docker
@@ -210,3 +213,4 @@ go get -u github.com/go-delve/delve/cmd/dl
 
 [Upgrading Bash on macOS]: https://itnext.io/upgrading-bash-on-macos-7138bd1066ba
 [this Stack answer]: https://stackoverflow.com/questions/40523307/brew-install-docker-does-not-include-docker-engine#answer-43365425
+[`git-secrets`]: https://github.com/awslabs/git-secrets
