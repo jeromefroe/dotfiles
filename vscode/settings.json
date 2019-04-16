@@ -66,5 +66,6 @@
     // Validation for Kubernetes manifests
     "yaml.schemas": {
         "kubernetes": "manifests/*"
-    }
+    },
+    "[python]": {}
 }
