@@ -3,5 +3,12 @@
 #  Description:  This file holds all my Bash aliases.
 #
 #  Table of Contents:
+#  1.   Kubernetes
 #
 #  ---------------------------------------------------------------------------
+
+#   -------------------------------
+#   1. Kubernetes
+#   -------------------------------
+
+alias k='kubectl'
