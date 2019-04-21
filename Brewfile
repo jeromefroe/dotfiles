@@ -9,6 +9,7 @@ brew "rustup"
 ### Kubernetes
 brew "kubernetes-cli"
 brew "kubectx"
+brew "kube-ps1"
 brew "jsonnet"
 
 ### CLI Tools

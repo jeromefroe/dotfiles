@@ -56,3 +56,5 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
 #   5. direnv
 #   -------------------------------
 eval "$(direnv hook bash)"
+
+source /usr/local/share/kube-ps1.sh
