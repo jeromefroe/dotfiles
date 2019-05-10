@@ -22,6 +22,7 @@ brew "fzf"
 brew "git-secrets"
 brew "hh"
 brew "jq"
+brew "keybase"
 brew "protobuf"
 brew "shellcheck"
 brew "shfmt"
@@ -32,6 +33,7 @@ brew "youtube-dl"
 
 cask "docker"
 cask "google-cloud-sdk"
+cask "keybase"
 
 ### Applications
 cask "alfred"
