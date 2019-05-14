@@ -7,7 +7,8 @@
 #  2.   HSTR
 #  3.   Bash Completion
 #  4.   autojump
-#  5.   direnv
+#  5.   kube-ps1
+#  6.   direnv
 #
 #  ---------------------------------------------------------------------------
 
@@ -53,8 +54,15 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 #   -------------------------------
-#   5. direnv
+#   5. kube-ps1
+#   -------------------------------
+source /usr/local/share/kube-ps1.sh
+
+# In the future, consider disabling the kube-ps1 prompt by default and using direnv
+# to only enable it for certain directories.
+# KUBE_PS1_ENABLED=off
+
+#   -------------------------------
+#   6. direnv
 #   -------------------------------
 eval "$(direnv hook bash)"
-
-source /usr/local/share/kube-ps1.sh
