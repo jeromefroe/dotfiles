@@ -10,12 +10,13 @@ Preferences > Dock > "Show recent applications in Dock".
 your Apple account. Note that the passcode for your phone is the one you enter on the lock
 screen.
 
-## 1. Setup Chrome
+## 1. Clone Dotfiles from Github
 
-The first step was to install Chrome and add my user. Navigate to People > Add Person. All one
-needs to sign in is password + Google Authenticator code.
-
-## 2. Clone Dotfiles from Github
+My first step in configuring a new machine is to grab my dotfiles repo from Github since the
+repo contains all the scripts and configuration I need to setup a machine. My dotfiles repo
+is public so I don't need to retrieve my Github private key to access them (instead I do this
+in a later step). The only requirement for this step is that `git` and `bash` are installed
+on the machine (a pretty safe assumption):
 
 ```bash
 mkdir -p ~/dev && cd ~/dev
@@ -30,7 +31,7 @@ but rather to add the contents of `.bash_profile` in this repo to the end of the
 isn't a big problem in practice because the repo is set up such that `.bash_profile` should
 be pretty simple and need only source the other files which are stored in this repo.
 
-## 3. Install Homebrew
+## 2. Install Homebrew
 
 Install Homebrew with the following command:
 
@@ -38,12 +39,12 @@ Install Homebrew with the following command:
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-## 4. Sign into Mac App Store
+## 3. Sign into Mac App Store
 
 Before we use Homebrew to install our packages we need to sign into the Mac App Store
 as we use Homebrew to manage our Mac applications as well (for example, Alfred and Magnet).
 
-## 5. Install Homebrew package
+## 4. Install Homebrew packages
 
 The next step is to use Homebrew to install our packages. Note that Xcode can take a long time
 so I'd recommend commenting out on the first run so that subsequent steps aren't stuck waiting
@@ -54,7 +55,7 @@ cd ~/dev/dotfiles
 brew bundle
 ```
 
-## 6. Install non-Homebrew tools
+## 5. Install non-Homebrew tools
 
 There are some tools I use that do not have Homebrew packages. Fortunately, the number is small
 and still managable. To install them, run the following:
@@ -72,7 +73,7 @@ chmod +x ~/dev/mssh.py
 go get -u github.com/go-delve/delve/cmd/dl
 ```
 
-## 7. Sign into applications
+## 6. Sign into applications
 
   1. Dropbox
   2. Alfred
@@ -86,6 +87,9 @@ go get -u github.com/go-delve/delve/cmd/dl
   4. Evernote
   5. Slack
   6. Messages
+  7. Chrome
+     * To add an account to Chrome navigate to People > Add Person. One can then go through the
+       standard two-factor authentication workflow of password + Google Authenticator code.
 
 ## 8. Configure some stuff
 
