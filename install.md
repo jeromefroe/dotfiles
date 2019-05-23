@@ -71,7 +71,7 @@ Install Homebrew with the following command:
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-## 6 Sign into Mac App Store
+## 6. Sign into Mac App Store
 
 Before we use Homebrew to install our packages we need to sign into the Mac App Store
 as we use Homebrew to manage our Mac applications as well (for example, Alfred and Magnet).
@@ -203,9 +203,9 @@ go get -u github.com/go-delve/delve/cmd/dl
 
   10. Docker
 
-     As discussed in [this Stack answer], one needs to open the Docker application after it is
-     installed by Homebrew since its needs sudo privileges. In addition, Homebrew doesn't
-     automatically include Docker's bash completion script so we need to grab it manually:
+      As discussed in [this Stack answer], one needs to open the Docker application after it is
+      installed by Homebrew since its needs sudo privileges. In addition, Homebrew doesn't
+      automatically include Docker's bash completion script so we need to grab it manually:
 
      ```bash
      curl -o /usr/local/etc/bash_completion.d/docker https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker
