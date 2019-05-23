@@ -15,40 +15,7 @@ screen.
 The first step was to install Chrome and add my user. Navigate to People > Add Person. All one
 needs to sign in is password + Google Authenticator code.
 
-## 2. Install LastPass
-
-Once your account is added to Chrome it will install one’s Chrome extensions, this includes
-LastPass for me. To sign into LastPass I just need my password. The next step is to install the
-Binary component of LastPass by navigating to Go to your: LastPass Icon > More Options > "About
-LastPass". It should say: "Binary Component: true". If it says "false: Install the binary version
-by clicking the button 'Enable Native Messaging'" or 'Enable Binary', next to it to download and
-run the installer.
-
-TODO: Find a better solution than this.
-
-## 3. Get SSH Key from LastPass
-
-Make a directory for private keys:
-
-```bash
-mkdir ~/.ssh
-```
-
-Navigate to Auth > SSH Keys and Credentials and save `github.key` and `github.pub` to ~/.ssh (you
-may need to right-click on them to save them). I saved `github.key` as just `github`.
-
-Once the keys have been put into the ssh directory, ensure they have the proper permission and
-then add them to ssh-agent:
-
-```bash
-chmod 400 ~/.ssh/github
-chmod 400 ~/.ssh/github.pub
-ssh-add ~/.ssh/github
-```
-
-See LastPass for the passphrase.
-
-## 4. Clone Dotfiles from Github
+## 2. Clone Dotfiles from Github
 
 ```bash
 mkdir -p ~/dev && cd ~/dev
@@ -63,7 +30,7 @@ but rather to add the contents of `.bash_profile` in this repo to the end of the
 isn't a big problem in practice because the repo is set up such that `.bash_profile` should
 be pretty simple and need only source the other files which are stored in this repo.
 
-## 5. Install Homebrew
+## 3. Install Homebrew
 
 Install Homebrew with the following command:
 
@@ -71,12 +38,12 @@ Install Homebrew with the following command:
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-## 6. Sign into Mac App Store
+## 4. Sign into Mac App Store
 
 Before we use Homebrew to install our packages we need to sign into the Mac App Store
 as we use Homebrew to manage our Mac applications as well (for example, Alfred and Magnet).
 
-## 7. Install Homebrew package
+## 5. Install Homebrew package
 
 The next step is to use Homebrew to install our packages. Note that Xcode can take a long time
 so I'd recommend commenting out on the first run so that subsequent steps aren't stuck waiting
@@ -87,7 +54,7 @@ cd ~/dev/dotfiles
 brew bundle
 ```
 
-## 8. Install non-Homebrew tools
+## 6. Install non-Homebrew tools
 
 There are some tools I use that do not have Homebrew packages. Fortunately, the number is small
 and still managable. To install them, run the following:
@@ -105,7 +72,7 @@ chmod +x ~/dev/mssh.py
 go get -u github.com/go-delve/delve/cmd/dl
 ```
 
-## 9. Sign into applications
+## 7. Sign into applications
 
   1. Dropbox
   2. Alfred
@@ -120,7 +87,7 @@ go get -u github.com/go-delve/delve/cmd/dl
   5. Slack
   6. Messages
 
-## 10. Configure some stuff
+## 8. Configure some stuff
 
   1. Bash
 
@@ -210,6 +177,41 @@ go get -u github.com/go-delve/delve/cmd/dl
      ```bash
      curl -o /usr/local/etc/bash_completion.d/docker https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker
      ```
+
+## 9. Get SSH Keys From LastPass
+
+I store my SSH keys in LastPass so to download them one can use the LastPass CLI tool which
+was installed by Homebrew previously. The first step is to login, the following command will
+take you through the two-factor authentication workflow:
+
+```bash
+lpass login "email@example.com"
+```
+
+Once we've logged into LastPass we can use the CLI to get the LastPass ID's of our keys
+so we can install them locally:
+
+```bash
+# I store my keys in a note called 'SSH Keys and Credentials' so the first step is to get
+# that note's ID.
+KEYS_ID=$(lpass ls | grep 'SSH Keys and Credentials' | awk '{print $6}' | sed 's/[^0-9]*//g')
+
+# Once we have the ID of the note where our keys are stored we can get the IDs of the keys
+# we are interested that are stored in that note. In my case it's just my Github key.
+GITHUB_PUB_KEY_ID=$(lpass show $KEYS_ID | grep 'github.pub' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
+GITHUB_PRIVATE_KEY_ID=$(lpass show $KEYS_ID | grep 'github.key' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
+
+# Once we have the IDs of our keys we can retrieve them from LastPass and install them.
+mkdir ~/.ssh
+lpass show $KEYS_ID --attach=$GITHUB_PUB_KEY_ID > ~/.ssh/github.pub
+lpass show $KEYS_ID --attach=$GITHUB_PRIVATE_KEY_ID > ~/.ssh/github
+
+# Finally, we need to set the correct permissions the files and can add our private key to
+# SSH agent.
+chmod 400 ~/.ssh/github
+chmod 400 ~/.ssh/github.pub
+ssh-add ~/.ssh/github
+```
 
 [Upgrading Bash on macOS]: https://itnext.io/upgrading-bash-on-macos-7138bd1066ba
 [this Stack answer]: https://stackoverflow.com/questions/40523307/brew-install-docker-does-not-include-docker-engine#answer-43365425
