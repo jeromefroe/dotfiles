@@ -6,7 +6,7 @@ colorscheme solarized
 
 :syntax on
 
-"Highlight characters beyond 100 character column limit. Source:
+"Highlight characters beyond 80 character column limit. Source:
 "https://stackoverflow.com/questions/235439/vim-80-column-layout-concerns
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%101v.\+/
+match OverLength /\%81v.\+/
