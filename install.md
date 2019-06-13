@@ -70,26 +70,24 @@ curl https://gist.githubusercontent.com/dgromov/350c6d80f65ba2bedf63ac168bcd788f
 chmod +x ~/dev/mssh.py
 
 # Install Delve
-go get -u github.com/go-delve/delve/cmd/dl
+go get -u github.com/go-delve/delve/cmd/dlv
 ```
 
 ## 6. Sign into applications
 
+  1. Chrome
+     * To add an account to Chrome navigate to People > Add Person. One can then go through the
+       standard two-factor authentication workflow of password + Google Authenticator code.
   1. Dropbox
-  2. Alfred
+  1. Alfred
      * First add the Powerpack license by navigating to Alfred Preferences > Powerpack. My license
       is stored in LastPass.
      * Enable syncing of preferences with Dropbox by navigating to Advanced > Set preferences
        folder > `Dropbox/Sync/Alfred`.
      * Enable storing Clipboard History by navigating to Features > Clipboard and set "Keep Plain
        Text" to 3 months.
-  3. Spotify
-  4. Evernote
-  5. Slack
-  6. Messages
-  7. Chrome
-     * To add an account to Chrome navigate to People > Add Person. One can then go through the
-       standard two-factor authentication workflow of password + Google Authenticator code.
+  1. Spotify
+  1. Messages
 
 ## 8. Configure some stuff
 
@@ -125,15 +123,23 @@ go get -u github.com/go-delve/delve/cmd/dl
 
      Run the following command to install extensions:
 
-         `cat ~/dev/dotfiles/vscode/extensions | xargs -I {} code --install-extension {}`
+     ```bash
+     cat ~/dev/dotfiles/vscode/extensions | xargs -I {} code --install-extension {}
+     ```
 
      Run the following command to sync user settings:
 
-         `cp ~/dev/dotfiles/vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"`
+     ```bash
+     cp ~/dev/dotfiles/vscode/settings.json \
+       "$HOME/Library/Application Support/Code/User/settings.json"
+     ```
 
      Run the following command to sync keybindings:
 
-         `cp ~/dev/dotfiles/vscode/keybindings.json "$HOME/Library/Application Support/Code/User/keybindings.json"`
+     ```bash
+     cp ~/dev/dotfiles/vscode/keybindings.json \
+       "$HOME/Library/Application Support/Code/User/keybindings.json"
+     ```
 
   6. Rust
 
@@ -178,9 +184,10 @@ go get -u github.com/go-delve/delve/cmd/dl
       installed by Homebrew since its needs sudo privileges. In addition, Homebrew doesn't
       automatically include Docker's bash completion script so we need to grab it manually:
 
-     ```bash
-     curl -o /usr/local/etc/bash_completion.d/docker https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker
-     ```
+      ```bash
+      curl -o /usr/local/etc/bash_completion.d/docker \
+        https://raw.githubusercontent.com/docker/cli/master/ contrib/completion/bash/docker
+      ```
 
 ## 9. Get SSH Keys From LastPass
 
