@@ -75,19 +75,29 @@ go get -u github.com/go-delve/delve/cmd/dlv
 
 ## 6. Sign into applications
 
-  1. Chrome
+Some of the applications that we installed  require us to login in to them first. Fortunately,
+LastPass makes the process pretty easy. One can use the LastPass CLI to get the username and
+password for each application or, alternatively, one can use the LastPass Chrome extension after
+signing into Chrome and LastPass respectively. If using the CLI to get one's credentials, one
+need only sign into LastPass first and then use the following commands to get the username and
+credentials for a given application:
+
+```bash
+lpass login "email@example.com"
+
+lpass show --name <APPLICATION> --clip --username
+lpass show --name <APPLICATION> --clip --password
+```
+
+For each of the applications below I've added the name of the LastPass entity that the credentials
+are stored in.
+
+  1. Chrome (LastPass: 'Google')
      * To add an account to Chrome navigate to People > Add Person. One can then go through the
        standard two-factor authentication workflow of password + Google Authenticator code.
-  1. Dropbox
-  1. Alfred
-     * First add the Powerpack license by navigating to Alfred Preferences > Powerpack. My license
-      is stored in LastPass.
-     * Enable syncing of preferences with Dropbox by navigating to Advanced > Set preferences
-       folder > `Dropbox/Sync/Alfred`.
-     * Enable storing Clipboard History by navigating to Features > Clipboard and set "Keep Plain
-       Text" to 3 months.
-  1. Spotify
-  1. Messages
+  1. Dropbox (LastPass: 'Dropbox')
+  1. Spotify (LastPass: 'Spotify')
+  1. Messages (LastPass: 'Apple')
 
 ## 8. Configure some stuff
 
@@ -106,20 +116,31 @@ go get -u github.com/go-delve/delve/cmd/dlv
      sudo chsh -s /usr/local/bin/bash
      ```
 
-  2. Dash
-
-     Download Go, Rust, and Python 3 docs.
-
-  3. Magnet
-
-     Open application and follow instructions to authorize.
-
-  4. iTerm2
+  1. iTerm2
 
      To load our stored preferences, navigate to General > "Preferences and check Load Preferences
      from a Custom folder or URL" and then select `~/dev/dotfiles/iterm`.
 
-  5. VS Code
+  1. Alfred
+     * Alfred requires a license to enable its Powerpack features. I store mine in LastPass so we
+       can retrieve it from via the CLI:
+
+       ```bash
+       lpass show Alfred --json | jq '.[].note' -r | jq '.powerpack_licenses.v4' -r | pbcopy
+       ```
+
+     * Once the license has been copied to our clipboard we can add it to Alfred by navigating to
+       Alfred Preferences > Powerpack.
+     * The last step required to finish configuring Alfred is to set the folder where our Alfred
+       preferences are stored. I sync my Alfred preferences to `~/dev/dotfiles/alfred`, so we want
+       tp navigate to Advanced > Set preferences and set the folder to the aforementioned directory.
+       Alfred also supports syncing to Dropbox, but that seems more applicable to people who use
+       multiple laptops regularly so keeping my Alfred preferences in my dotfiles repo has been
+       sufficient for me so far. It's worth noting also that [Alfred doesn't sync all settings],
+       they reason that some settings, such as one's Clipboard history, is specific to each
+       machine.
+
+  1. VS Code
 
      Run the following command to install extensions:
 
@@ -141,29 +162,35 @@ go get -u github.com/go-delve/delve/cmd/dlv
        "$HOME/Library/Application Support/Code/User/keybindings.json"
      ```
 
-  6. Rust
+  1. Magnet
+
+     Open application and follow instructions to authorize.
+
+  1. Rust
 
      Run the following command to initialize `rustup`: `rustup-init`. During initialization I
      chose not to modify my `.bash_profile` to add Cargo's `bin` directory to my path since I've
      aready done that.
 
-  7. Google Cloud SDK
+  1. Google Cloud SDK
 
      Run the following command initialize the Google Cloud SDK: `gcloud init`.
 
-  8. AWS CLI
+  1. AWS CLI
 
-     The first step to configuring the AWS CLI is to download my credentials from LastPass. They
-     are stored in Auth > SSH Keys and Credentials as aws_credentials.txt. We need to move them
-     to `~/.aws/credentials` and then we can configure the client:
+     The first step to configuring the AWS CLI is to download my credentials from LastPass into
+     the location expected by the AWS CLI. Once that's done we can run the `configure` command to
+     configure the CLI:
 
      ```bash
      mkdir -p ~/.aws
-     mv aws_credentials.txt ~/.aws/credentials
+     AWS_CREDS_KEY_ID=$(lpass show 'SSH Keys and Credentials' \
+       | grep 'aws_credentials.txt' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
+     lpass show 'SSH Keys and Credentials' --attach=$AWS_CREDS_KEY_ID > ~/.aws/credentials
      aws configure
      ```
 
-  9. Git
+  1. Git
 
       Run the following commands to set global Git configuration options. The first two commands
       set the default email and name for commits respectively, the third command ensures that when
@@ -178,7 +205,7 @@ go get -u github.com/go-delve/delve/cmd/dlv
       git secrets --register-aws --global
       ```
 
-  10. Docker
+  1. Docker
 
       As discussed in [this Stack answer], one needs to open the Docker application after it is
       installed by Homebrew since its needs sudo privileges. In addition, Homebrew doesn't
@@ -188,6 +215,10 @@ go get -u github.com/go-delve/delve/cmd/dlv
       curl -o /usr/local/etc/bash_completion.d/docker \
         https://raw.githubusercontent.com/docker/cli/master/ contrib/completion/bash/docker
       ```
+
+  1. Dash
+
+     Download Go, Rust, and Python 3 docs.
 
 ## 9. Get SSH Keys From LastPass
 
@@ -203,19 +234,17 @@ Once we've logged into LastPass we can use the CLI to get the LastPass ID's of o
 so we can install them locally:
 
 ```bash
-# I store my keys in a note called 'SSH Keys and Credentials' so the first step is to get
-# that note's ID.
-KEYS_ID=$(lpass ls | grep 'SSH Keys and Credentials' | awk '{print $6}' | sed 's/[^0-9]*//g')
-
-# Once we have the ID of the note where our keys are stored we can get the IDs of the keys
-# we are interested that are stored in that note. In my case it's just my Github key.
-GITHUB_PUB_KEY_ID=$(lpass show $KEYS_ID | grep 'github.pub' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
-GITHUB_PRIVATE_KEY_ID=$(lpass show $KEYS_ID | grep 'github.key' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
+# I store my keys as attachments in a note called 'SSH Keys and Credentials' so the first thing we
+# need to do is get the ID's for the attchments.
+GITHUB_PUB_KEY_ID=$(lpass show 'SSH Keys and Credentials' \
+  | grep 'github.pub' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
+GITHUB_PRIVATE_KEY_ID=$(lpass show 'SSH Keys and Credentials' \
+  | grep 'github.key' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
 
 # Once we have the IDs of our keys we can retrieve them from LastPass and install them.
 mkdir ~/.ssh
-lpass show $KEYS_ID --attach=$GITHUB_PUB_KEY_ID > ~/.ssh/github.pub
-lpass show $KEYS_ID --attach=$GITHUB_PRIVATE_KEY_ID > ~/.ssh/github
+lpass show 'SSH Keys and Credentials' --attach=$GITHUB_PUB_KEY_ID > ~/.ssh/github.pub
+lpass show 'SSH Keys and Credentials' --attach=$GITHUB_PRIVATE_KEY_ID > ~/.ssh/github
 
 # Finally, we need to set the correct permissions the files and can add our private key to
 # SSH agent.
@@ -225,5 +254,7 @@ ssh-add ~/.ssh/github
 ```
 
 [Upgrading Bash on macOS]: https://itnext.io/upgrading-bash-on-macos-7138bd1066ba
-[this Stack answer]: https://stackoverflow.com/questions/40523307/brew-install-docker-does-not-include-docker-engine#answer-43365425
+[Alfred doesn't sync all settings]: https://www.alfredapp.com/help/advanced/sync/
+[this Stack answer]:
+https://stackoverflow.com/questions/40523307/brew-install-docker-does-not-include-docker-engine#answer-43365425
 [`git-secrets`]: https://github.com/awslabs/git-secrets
