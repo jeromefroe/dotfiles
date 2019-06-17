@@ -220,6 +220,10 @@ are stored in.
 
      Download Go, Rust, and Python 3 docs.
 
+  1. Keybase
+
+     Open the Keybase application and follow the steps to add a new device to your account.
+
 ## 9. Get SSH Keys From LastPass
 
 I store my SSH keys in LastPass so to download them one can use the LastPass CLI tool which
@@ -252,6 +256,15 @@ chmod 400 ~/.ssh/github
 chmod 400 ~/.ssh/github.pub
 ssh-add ~/.ssh/github
 ```
+
+## 10. Clean up old laptop
+
+Some applications that I use are specific to a given device. For these applications it makes sense
+to revoke my old device once my new machine is setup:
+
+* Dropbox
+* iCloud
+* Keybase
 
 [Upgrading Bash on macOS]: https://itnext.io/upgrading-bash-on-macos-7138bd1066ba
 [Alfred doesn't sync all settings]: https://www.alfredapp.com/help/advanced/sync/
