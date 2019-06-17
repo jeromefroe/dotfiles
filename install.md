@@ -213,7 +213,7 @@ are stored in.
 
       ```bash
       curl -o /usr/local/etc/bash_completion.d/docker \
-        https://raw.githubusercontent.com/docker/cli/master/ contrib/completion/bash/docker
+        https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker
       ```
 
   1. Dash
