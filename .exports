@@ -6,6 +6,7 @@
 #  1.   Go
 #  2.   Python
 #  3.   Bash
+#  4.   Other
 #
 #  ---------------------------------------------------------------------------
 
@@ -26,5 +27,12 @@ export PYTHONDONTWRITEBYTECODE=false
 #   -------------------------------
 #   3. Bash
 #   -------------------------------
+
 # Set Bash completion directory so completion files are sourced automatically.
 export BASH_COMPLETION_COMPAT_DIR=/usr/local/etc/bash_completion.d/
+
+#   -------------------------------
+#   4. Other
+#   -------------------------------
+
+export EDITOR=vim
