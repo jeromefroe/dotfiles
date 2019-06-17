@@ -18,7 +18,7 @@
 
 # Source SCM Breeze script to set aliases:
 # https://github.com/scmbreeze/scm_breeze#installation
-[ -s "/$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
 #   -------------------------------
 #   2. HSTR
