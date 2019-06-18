@@ -39,15 +39,11 @@ cask "keybase"
 cask "alfred"
 cask "dash"
 cask "dropbox"
+cask 'firefox'
 cask "iterm2"
-cask "slack"
 cask "spotify"
 cask "visual-studio-code"
 cask "vlc"
-
-# Chrome and Firefox are often installed by default on new machines.
-# cask 'google-chrome'
-# cask 'firefox'
 
 ### Mac App Store
 
