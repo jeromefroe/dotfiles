@@ -78,6 +78,10 @@ the directory by hitting the "Save Current Settings to Folder" button on the Gen
 See the Stack question [How to export iTerm2 Profiles] for more information on saving iTerm2
 profiles.
 
+I like to set a few extra keybindings for iTerm to make it feel more like other Mac applications.
+The StackOverflow post [iTerm 2: How to set keyboard shortcuts to jump to beginning/end of line?]
+covers a lot of the most common keybindings.
+
 ## Visual Studio Code
 
 I like to save my VS Code settings, keybindings, and extensions. The settings and keybindings
@@ -105,9 +109,16 @@ The script `sync.sh` in this directory will run the aforementioned commands to s
 VS Code configuration to the `vscode` directory.
 
 [.bash_profile vs .bashrc]: http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html
-[Difference between ~/.profile and ~/.bash_profile]: https://unix.stackexchange.com/questions/45684/difference-between-profile-and-bash-profile
-[Bash: about .bashrc, .bash_profile, .profile, /etc/profile, etc/bash.bashrc and others]: http://stefaanlippens.net/bashrc_and_others/
+[Difference between ~/.profile and ~/.bash_profile]:
+https://unix.stackexchange.com/questions/45684/difference-between-profile-and-bash-profile
+[Bash: about .bashrc, .bash_profile, .profile, /etc/profile, etc/bash.bashrc and others]:
+http://stefaanlippens.net/bashrc_and_others/
 [Restore, Clone or Backup your Homebrew Setup]: https://tomlankhorst.nl/brew-bundle-restore-backup/
-[this StackExchange answer]: https://apple.stackexchange.com/questions/101090/list-of-all-packages-installed-using-homebrew
-[What is the difference between brew install XXX and brew cask install XXX]: https://stackoverflow.com/questions/46403937/what-is-the-difference-between-brew-install-xxx-and-brew-cask-install-xxx
-[How to export iTerm2 Profiles]: https://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles
+[this StackExchange answer]:
+https://apple.stackexchange.com/questions/101090/list-of-all-packages-installed-using-homebrew
+[What is the difference between brew install XXX and brew cask install XXX]:
+https://stackoverflow.com/questions/46403937/what-is-the-difference-between-brew-install-xxx-and-brew-cask-install-xxx
+[How to export iTerm2 Profiles]:
+https://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles
+[iTerm 2: How to set keyboard shortcuts to jump to beginning/end of line?]:
+https://stackoverflow.com/questions/6205157/iterm-2-how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line
