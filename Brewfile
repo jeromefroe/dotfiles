@@ -35,6 +35,14 @@ cask "docker"
 cask "google-cloud-sdk"
 cask "keybase"
 
+#### Dependencies for ripgrep-all, once a package exists for ripgrep-all itself I need to add it
+#### here as well (it's being tracked in https://github.com/phiresky/ripgrep-all/issues/9).
+brew "ripgrep"
+brew "pandoc"
+brew "poppler"
+brew "tesseract"
+brew "ffmpeg"
+
 ### Applications
 cask "alfred"
 cask "dash"
