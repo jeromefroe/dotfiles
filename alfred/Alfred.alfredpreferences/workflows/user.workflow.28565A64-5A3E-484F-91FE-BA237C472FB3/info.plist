@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.0dd.amphetamine</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>940601C3-9197-4277-9C01-7D1292E0B6A7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CDBD9165-C0BB-40B5-9C22-D56038DB6278</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>97C1EA7B-7FD0-4356-9E37-780FF76CC80D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5F32EF2-9B3C-4F83-BF2A-CDCCFF1B9BF3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E5F32EF2-9B3C-4F83-BF2A-CDCCFF1B9BF3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>044EBE3A-517C-41C2-9A0A-CB2E3ED56948</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>0dd</string>
+	<key>description</key>
+	<string>An amphetamine control workflow</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>amphetamine on-off</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell application "Amphetamine"			if (q is not in {"", null}) then				-- Start/activate the app			activate				set hoursOnly to no				if (q contains "h") and (q does not contain "m") then			set hoursOnly to yes		end if				-- Remove text from argument		set q to (do shell script "echo " &amp; q &amp; " | sed 's/hours//g'")		set q to (do shell script "echo " &amp; q &amp; " | sed 's/hour//g'")		set q to (do shell script "echo " &amp; q &amp; " | sed 's/minutes//g'")		set q to (do shell script "echo " &amp; q &amp; " | sed 's/h//g'")		set q to (do shell script "echo " &amp; q &amp; " | sed 's/m//g'")				set someHours to 0		set someMinutes to 0				if q contains " " then						-- Separate hours and minutes			set AppleScript's text item delimiters to " "			set someHours to text item 1 of q as number			set someMinutes to text item 2 of q as number			set AppleScript's text item delimiters to ""						-- Multiply &amp; add to get total seconds			set someHours to someHours * 60 			set someMinutes to someMinutes 						set q to someHours + someMinutes					else -- No space, assume only minutes						if hoursOnly is yes then				set q to q * 60 			else				set q to q 			end if					end if				turn on for q			else				turn on			end if	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>044EBE3A-517C-41C2-9A0A-CB2E3ED56948</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	set res to q
+	tell application "Amphetamine"
+		turn off
+	end tell
+	return res
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>E5F32EF2-9B3C-4F83-BF2A-CDCCFF1B9BF3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>amon</string>
+				<key>subtext</key>
+				<string>With duration (optional; ex: 1h 30m)</string>
+				<key>text</key>
+				<string>Turn Amphetamine On</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>97C1EA7B-7FD0-4356-9E37-780FF76CC80D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  
+	tell application "Amphetamine"			turn off		end tell
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>CDBD9165-C0BB-40B5-9C22-D56038DB6278</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>amoff</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Turn Amphetamine Off</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>940601C3-9197-4277-9C01-7D1292E0B6A7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow is based on Amphetamine Control by William C. Gustafson
+
+Download Amphetamine from the Mac App Store:
+https://itunes.apple.com/app/amphetamine/id937984704?mt=12</string>
+	<key>uidata</key>
+	<dict>
+		<key>044EBE3A-517C-41C2-9A0A-CB2E3ED56948</key>
+		<dict>
+			<key>xpos</key>
+			<integer>540</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
+		<key>940601C3-9197-4277-9C01-7D1292E0B6A7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>140</integer>
+			<key>ypos</key>
+			<integer>270</integer>
+		</dict>
+		<key>97C1EA7B-7FD0-4356-9E37-780FF76CC80D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>140</integer>
+			<key>ypos</key>
+			<integer>110</integer>
+		</dict>
+		<key>CDBD9165-C0BB-40B5-9C22-D56038DB6278</key>
+		<dict>
+			<key>xpos</key>
+			<integer>340</integer>
+			<key>ypos</key>
+			<integer>270</integer>
+		</dict>
+		<key>E5F32EF2-9B3C-4F83-BF2A-CDCCFF1B9BF3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>330</integer>
+			<key>ypos</key>
+			<integer>110</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
