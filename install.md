@@ -190,6 +190,18 @@ are stored in.
      aws configure
      ```
 
+  1. Spotify
+
+     I have a program to take backups of my Spotify playlists and it uses a client which has been
+     registed with Spotify to get access tokens to my account. The program assumes the credentials
+     for the Spotify client are stored at `~/.creds/spotify.json` so we need to grab them LastPass
+     and store them in that file.
+
+     ```bash
+     mkdir -p ~/.creds
+     lpass show Spotify --json | jq '.[].note' -r | jq . -r > ~/.creds/spotify.json
+     ```
+
   1. Git
 
       Run the following commands to set global Git configuration options. The first two commands
