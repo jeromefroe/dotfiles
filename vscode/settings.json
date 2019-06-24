@@ -67,6 +67,5 @@
     "yaml.schemas": {
         "kubernetes": "manifests/*"
     },
-    "[python]": {},
-    "go.useLanguageServer": true
+    "[python]": {}
 }
