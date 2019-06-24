@@ -71,6 +71,9 @@ chmod +x ~/dev/mssh.py
 
 # Install Delve
 go get -u github.com/go-delve/delve/cmd/dlv
+
+# Install catj
+npm install -g catj
 ```
 
 ## 6. Sign into applications
