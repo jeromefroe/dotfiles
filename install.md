@@ -72,6 +72,12 @@ chmod +x ~/dev/mssh.py
 # Install Delve
 go get -u github.com/go-delve/delve/cmd/dlv
 
+# Install protoc plugin for Gos, this command will install the plugins to $GOBIN, which
+# defaults to $GOPATH/bin, and I already include the latter in $PATH
+go get -u github.com/golang/protobuf/protoc-gen-go
+go get github.com/gogo/protobuf/protoc-gen-gogoslick
+go get go.uber.org/yarpc/encoding/protobuf/protoc-gen-yarpc-go
+
 # Install catj
 npm install -g catj
 ```
