@@ -8,6 +8,9 @@
 # Function to generate PS1.
 export PROMPT_COMMAND=__prompt_command
 
+# Disable the default virtualenv prompt change since we set our own custom one.
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 # PS2 is the continuation prompt which is the promt given below the first line
 # for multi-line commands.
 if tput setaf 1 &>/dev/null; then
@@ -94,6 +97,9 @@ function __prompt_command() {
 
 	PS1+=' $(kube_ps1)'
 
+	# Add an indicator to the prompt if a Python virtualenv is active.
+	PS1+="$(virtualenv_info)"
+
 	PS1+="\n"
 
 	# Color `$` based on status code of previous command, green if it was zero,
@@ -138,4 +144,15 @@ prompt_git() {
 	else
 		return
 	fi
+}
+
+# virtualenv_info indicates whethon a Python virtualenv is active. It is adapated from
+# https://stackoverflow.com/questions/10406926/how-do-i-change-the-default-virtualenv-prompt.
+function virtualenv_info() {
+	if [[ -n "$VIRTUAL_ENV" ]]; then
+		venv="${VIRTUAL_ENV##*/}"
+	else
+		venv=''
+	fi
+	[[ -n "$venv" ]] && echo "($venv) "
 }
