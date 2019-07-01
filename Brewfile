@@ -9,7 +9,7 @@ brew "rustup"
 ### Kubernetes
 brew "kubernetes-cli"
 brew "kubectx"
-brew "kube-ps1"
+brew "kube-ps1", args: ["HEAD"] # Install from HEAD for now to pick up PR #84 to fix PROMPT_COMMAND.
 brew "jsonnet"
 
 ### CLI Tools

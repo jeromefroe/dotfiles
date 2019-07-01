@@ -65,4 +65,7 @@ source /usr/local/share/kube-ps1.sh
 #   -------------------------------
 #   6. direnv
 #   -------------------------------
+
+# direnv adds a hook to the start of $PROMPT_COMMAND but that's okay because it saves and returns
+# the previous exit status so it is available to subsequent commands.
 eval "$(direnv hook bash)"
