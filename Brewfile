@@ -36,6 +36,7 @@ brew "youtube-dl"
 cask "docker"
 cask "google-cloud-sdk"
 cask "keybase"
+cask "monodraw"
 
 #### Dependencies for ripgrep-all, once a package exists for ripgrep-all itself I need to add it
 #### here as well (it"s being tracked in https://github.com/phiresky/ripgrep-all/issues/9).
