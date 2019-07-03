@@ -38,7 +38,7 @@ cask "google-cloud-sdk"
 cask "keybase"
 
 #### Dependencies for ripgrep-all, once a package exists for ripgrep-all itself I need to add it
-#### here as well (it's being tracked in https://github.com/phiresky/ripgrep-all/issues/9).
+#### here as well (it"s being tracked in https://github.com/phiresky/ripgrep-all/issues/9).
 brew "ripgrep"
 brew "pandoc"
 brew "poppler"
@@ -49,7 +49,7 @@ brew "ffmpeg"
 cask "alfred"
 cask "dash"
 cask "dropbox"
-cask 'firefox'
+cask "firefox"
 cask "iterm2"
 cask "spotify"
 cask "visual-studio-code"
@@ -59,12 +59,12 @@ cask "vlc"
 
 # mas is the Mac App Store CLI, it is required to install the Mac Store
 # applications listed below.
-brew 'mas'
+brew "mas"
 
-mas 'Amphetamine', id: 937984704
-mas 'Magnet', id: 441258766
+mas "Amphetamine", id: 937984704
+mas "Magnet", id: 441258766
 
 # Xcode takes a long time to install, when bringing up a new machine I would
 # recommend commenting the line below to skip installing initially so one could
 # set up the more important tools first.
-mas 'Xcode', id: 497799835
+mas "Xcode", id: 497799835
