@@ -1,18 +1,31 @@
-### Go
+# Taps
+# ----
+tap "caskroom/versions"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+
+# Go Tools
+# --------
 brew "go"
 brew "dep"
 brew "glide"
 
-### Rust
+# Rust Tools
+# ----------
 brew "rustup"
 
-### Kubernetes
+# Kubernetes Tools
+# ----------------
 brew "kubernetes-cli"
 brew "kubectx"
-brew "kube-ps1", args: ["HEAD"] # Install from HEAD for now to pick up PR #84 to fix PROMPT_COMMAND.
 brew "jsonnet"
 
-### CLI Tools
+# Install from HEAD for now to pick up PR #84 to fix PROMPT_COMMAND.
+brew "kube-ps1", args: ["HEAD"]
+
+# Binaries
+# --------
 brew "autojump"
 brew "awscli"
 brew "bash"
@@ -33,30 +46,32 @@ brew "tig"
 brew "tree"
 brew "youtube-dl"
 
-cask "docker"
 cask "google-cloud-sdk"
-cask "keybase"
-cask "monodraw"
 
-#### Dependencies for ripgrep-all, once a package exists for ripgrep-all itself I need to add it
-#### here as well (it"s being tracked in https://github.com/phiresky/ripgrep-all/issues/9).
+# Dependencies for ripgrep-all, once a package exists for ripgrep-all itself I need to add
+# it here as well (it"s being tracked in https://github.com/phiresky/ripgrep-all/issues/9).
 brew "ripgrep"
 brew "pandoc"
 brew "poppler"
 brew "tesseract"
 brew "ffmpeg"
 
-### Applications
+# Applications
+# ------------
 cask "alfred"
 cask "dash"
+cask "docker"
 cask "dropbox"
 cask "firefox"
 cask "iterm2"
+cask "keybase"
+cask "monodraw"
 cask "spotify"
 cask "visual-studio-code"
 cask "vlc"
 
-### Mac App Store
+# App Store
+# ---------
 
 # mas is the Mac App Store CLI, it is required to install the Mac Store
 # applications listed below.
