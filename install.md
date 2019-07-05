@@ -12,11 +12,11 @@ screen.
 
 ## 1. Clone Dotfiles from Github
 
-My first step in configuring a new machine is to grab my dotfiles repo from Github since the
-repo contains all the scripts and configuration I need to setup a machine. My dotfiles repo
-is public so I don't need to retrieve my Github private key to access them (instead I do this
-in a later step). The only requirement for this step is that `git` and `bash` are installed
-on the machine (a pretty safe assumption):
+My first step in configuring a new machine is to grab my dotfiles repo from Github since it
+contains all the scripts and configuration I need to setup a machine. My dotfiles repo
+is public so I don't need to retrieve my Github private key to access it (I do this in a later
+step). The only requirement for this step is that `git` and `bash` are installed on the machine (a
+pretty safe assumption):
 
 ```bash
 mkdir -p ~/dev && cd ~/dev
@@ -106,7 +106,7 @@ are stored in.
   1. Spotify (LastPass: 'Spotify')
   1. Messages (LastPass: 'Apple')
 
-## 8. Configure some stuff
+## 7. Configure some stuff
 
   1. Bash
 

@@ -1,6 +1,13 @@
 # dotfiles
 
-This is my collection of dotfiles. It is organized into the following bash files:
+This repo contains the configuration and applicatin settings I use on my laptop. It started off
+with just my dotfiles but has expanded to include the different applications I use (managed via
+Homebrew) and their respective settings and configurations as well. The steps required to configure
+a new machine are listed in the `install.md` file.
+
+## Shell
+
+The dotfiles I use to configure my shell are organized into the following bash files:
 
 * `.aliases` - Bash aliases.
 * `.bash_profile` - Bash profile.
@@ -18,15 +25,7 @@ And the following Vim files and directories:
 The script `configure.sh` assumes the above files are in the directory `$HOME/dev/dotfile`
 and will create a soft link to them from one's home directory (`$HOME`).
 
-Also stored in this repo is the configuration for the following tools:
-
-* `iterm` - iTerm2.
-* `vscode` - Visual Studio Code.
-* `Brewfile` - Homebrew packages.
-
-The steps required to configure a new machine are listed in the `install.md` file.
-
-## Dotfiles Details
+### bash_profile vs. bashrc
 
 When configuring one's environment one can edit either `.bash_profile` or `.bashrc`.
 The difference between the two is that `.bash_profile` is executed for login shells
@@ -47,7 +46,7 @@ logins. This means that when a new terminal is opened `.bashrc` is sourced but n
 in `.bashrc` and sourcing `.bashrc` from `.bash_profile`. Will need to test on a Linux box
 to test.
 
-### Resources
+#### Resources
 
 * [.bash_profile vs .bashrc]
 * [Difference between ~/.profile and ~/.bash_profile]
@@ -63,7 +62,7 @@ as [this StackExchange answer] notes, it will display all top-level packages. An
 to the same question also notes that `brew list` and `brew cask list` can be used to display
 all Homebrew packages and casks respectively.
 
-### Homebrew Details
+### brew vs. cask
 
 The Stack question [What is the difference between brew install XXX and brew cask install XXX]
 details the difference between `brew` and `brew cask`. `brew` is the core command of the Homebrew
