@@ -16,6 +16,22 @@
     "command": "workbench.action.terminal.focusPrevious"
   },
   {
+    "key": "shift+[",
+    "command": "moveActiveEditor",
+    "when": "editorTextFocus",
+    "args": {
+      "to": "left"
+    }
+  },
+  {
+    "key": "shift+]",
+    "command": "moveActiveEditor",
+    "when": "editorTextFocus",
+    "args": {
+      "to": "right"
+    }
+  },
+  {
     "key": "ctrl+`",
     "command": "workbench.action.terminal.focus",
     "when": "!terminalFocus"
