@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string>iamstevendao.alfred-open-with-vscode</string>
-	<key>category</key>
-	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
 		<key>D97234CC-4D00-4B8D-A115-5919C89B2B02</key>
@@ -111,6 +109,8 @@
 				<false/>
 				<key>keyword</key>
 				<string>code</string>
+				<key>limit</key>
+				<integer>0</integer>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>scopes</key>
@@ -118,6 +118,8 @@
 					<string>~</string>
 					<string>~/coding</string>
 				</array>
+				<key>sortmode</key>
+				<integer>0</integer>
 				<key>subtext</key>
 				<string>Open with Visual Studio Code</string>
 				<key>title</key>
@@ -134,11 +136,14 @@
 			<key>uid</key>
 			<string>D97234CC-4D00-4B8D-A115-5919C89B2B02</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
-			<dict/>
+			<dict>
+				<key>path</key>
+				<string></string>
+			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.revealfile</string>
 			<key>uid</key>
@@ -158,7 +163,7 @@ Hit Return to open the file, or Alt + Return to reveal it in Finder.</string>
 			<key>note</key>
 			<string>2. Pressing the Return key opens the folder you selected in Visual Studio Code</string>
 			<key>xpos</key>
-			<integer>310</integer>
+			<integer>410</integer>
 			<key>ypos</key>
 			<integer>50</integer>
 		</dict>
@@ -167,22 +172,24 @@ Hit Return to open the file, or Alt + Return to reveal it in Finder.</string>
 			<key>note</key>
 			<string>3. Hold the Alt key when pressing Return to reveal the folder in Finder instead.</string>
 			<key>xpos</key>
-			<integer>310</integer>
+			<integer>410</integer>
 			<key>ypos</key>
-			<integer>280</integer>
+			<integer>250</integer>
 		</dict>
 		<key>D97234CC-4D00-4B8D-A115-5919C89B2B02</key>
 		<dict>
 			<key>note</key>
 			<string>1. Type "code" followed by the name of your folder. The scope is set to home folder only.</string>
 			<key>xpos</key>
-			<integer>50</integer>
+			<integer>30</integer>
 			<key>ypos</key>
-			<integer>160</integer>
+			<integer>50</integer>
 		</dict>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/iamstevendao/alfred-open-with-vscode</string>
 </dict>
