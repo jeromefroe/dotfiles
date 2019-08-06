@@ -67,5 +67,6 @@
     "yaml.schemas": {
         "kubernetes": "manifests/*"
     },
-    "[python]": {}
+    "[python]": {},
+    "prettier.singleQuote": true
 }
