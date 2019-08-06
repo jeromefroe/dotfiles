@@ -46,6 +46,7 @@ brew "shfmt"
 brew "terraform"
 brew "tig"
 brew "tree"
+brew "typescript"
 brew "youtube-dl"
 
 cask "google-cloud-sdk"
