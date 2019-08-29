@@ -11,7 +11,7 @@
     "go.testTimeout": "10s",
     "go.coverOnSave": false,
     "go.useCodeSnippetsOnFunctionSuggest": false,
-    "go.formatTool": "goreturns",
+    "go.formatTool": "goimports",
     "editor.cursorBlinking": "smooth",
     "editor.tabSize": 2,
     "editor.glyphMargin": true,
@@ -24,6 +24,9 @@
     "editor.renderIndentGuides": true,
     "editor.fontSize": 12,
     // "editor.renderWhitespace": true,
+    "files.associations": {
+        "*.star": "starlark"
+    },
     "files.exclude": {
         "**/.tmp": true,
         "**/.git": true,
@@ -68,5 +71,6 @@
         "kubernetes": "manifests/*"
     },
     "[python]": {},
-    "prettier.singleQuote": true
+    "prettier.singleQuote": true,
+    "bazel.buildifierFixOnFormat": true
 }
