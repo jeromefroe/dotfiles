@@ -28,6 +28,7 @@ brew "kube-ps1", args: ["HEAD"]
 # --------
 brew "autojump"
 brew "awscli"
+brew "azure-cli"
 brew "bash"
 brew "bash-completion@2"
 brew "buildifier"
