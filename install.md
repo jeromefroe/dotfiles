@@ -244,11 +244,14 @@ are stored in.
    set the default email and name for commits respectively, the third command ensures that when
    one runs `git push`, `git` will assume that the user is pushing the current branch, and the
    fourth command configures the [`git-secrets`] plugin to check all commit for AWS credentials
-   which may have been added accidentally.
+   which may have been added accidentally. Note that I expect subdirectories to use `direnv` to
+   [set the `GIT_AUTHOR_EMAIL` and `GIT_COMMITTER_EMAIL` environment variables] to override the
+   the author and committer emails as necessary. The blog post [Multiple Personalities in Git]
+   contains further details on how one can use `direnv` to manage Git accounts.
 
    ```bash
-   git config --global user.email "email@example.com"
-   git config --global user.name "John Doe"
+   git config --global user.email "jeromefroelich@hotmail.com"
+   git config --global user.name "Jerome Froelich"
    git config --global push.default current
    git secrets --register-aws --global
    ```
@@ -323,3 +326,5 @@ to revoke my old device once my new machine is setup:
 [this stack answer]: https://stackoverflow.com/questions/40523307/brew-install-docker-does-not-include-docker-engine#answer-43365425
 [`git-secrets`]: https://github.com/awslabs/git-secrets
 [why isn't my clipboard history working?]: https://www.alfredapp.com/help/troubleshooting/clipboard-history/
+[set the `git_author_email` and `git_committer_email` environment variables]: https://git-scm.com/docs/git-config#Documentation/git-config.txt-committeremail
+[multiple personalities in git]: https://collectiveidea.com/blog/archives/2016/04/04/multiple-personalities-in-git
