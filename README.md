@@ -9,18 +9,19 @@ a new machine are listed in the `install.md` file.
 
 The dotfiles I use to configure my shell are organized into the following bash files:
 
-* `.aliases` - Bash aliases.
-* `.bash_profile` - Bash profile.
-* `.bash_prompt` - Bash prompt.
-* `.exports` - Exported variables.
-* `.extra` - Miscellaneous commands to run.
-* `.functions` - Bash functions.
-* `.path` - Additional directories added to my PATH.
+- `.aliases` - Bash aliases.
+- `.bash_profile` - Bash profile.
+- `.bash_prompt` - Bash prompt.
+- `.envrc` - Sane global defaults.
+- `.exports` - Exported variables.
+- `.extra` - Miscellaneous commands to run.
+- `.functions` - Bash functions.
+- `.path` - Additional directories added to my PATH.
 
 And the following Vim files and directories:
 
-* `.vim` - Vim plugin directory.
-* `.vimrc` - Vim configuration.
+- `.vim` - Vim plugin directory.
+- `.vimrc` - Vim configuration.
 
 The script `configure.sh` assumes the above files are in the directory `$HOME/dev/dotfile`
 and will create a soft link to them from one's home directory (`$HOME`).
@@ -48,9 +49,9 @@ to test.
 
 #### Resources
 
-* [.bash_profile vs .bashrc]
-* [Difference between ~/.profile and ~/.bash_profile]
-* [Bash: about .bashrc, .bash_profile, .profile, /etc/profile, etc/bash.bashrc and others]
+- [.bash_profile vs .bashrc]
+- [Difference between ~/.profile and ~/.bash_profile]
+- [Bash: about .bashrc, .bash_profile, .profile, /etc/profile, etc/bash.bashrc and others]
 
 ## Homebrew
 
@@ -108,16 +109,10 @@ The script `sync.sh` in this directory will run the aforementioned commands to s
 VS Code configuration to the `vscode` directory.
 
 [.bash_profile vs .bashrc]: http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html
-[Difference between ~/.profile and ~/.bash_profile]:
-https://unix.stackexchange.com/questions/45684/difference-between-profile-and-bash-profile
-[Bash: about .bashrc, .bash_profile, .profile, /etc/profile, etc/bash.bashrc and others]:
-http://stefaanlippens.net/bashrc_and_others/
-[Restore, Clone or Backup your Homebrew Setup]: https://tomlankhorst.nl/brew-bundle-restore-backup/
-[this StackExchange answer]:
-https://apple.stackexchange.com/questions/101090/list-of-all-packages-installed-using-homebrew
-[What is the difference between brew install XXX and brew cask install XXX]:
-https://stackoverflow.com/questions/46403937/what-is-the-difference-between-brew-install-xxx-and-brew-cask-install-xxx
-[How to export iTerm2 Profiles]:
-https://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles
-[iTerm 2: How to set keyboard shortcuts to jump to beginning/end of line?]:
-https://stackoverflow.com/questions/6205157/iterm-2-how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line
+[difference between ~/.profile and ~/.bash_profile]: https://unix.stackexchange.com/questions/45684/difference-between-profile-and-bash-profile
+[bash: about .bashrc, .bash_profile, .profile, /etc/profile, etc/bash.bashrc and others]: http://stefaanlippens.net/bashrc_and_others/
+[restore, clone or backup your homebrew setup]: https://tomlankhorst.nl/brew-bundle-restore-backup/
+[this stackexchange answer]: https://apple.stackexchange.com/questions/101090/list-of-all-packages-installed-using-homebrew
+[what is the difference between brew install xxx and brew cask install xxx]: https://stackoverflow.com/questions/46403937/what-is-the-difference-between-brew-install-xxx-and-brew-cask-install-xxx
+[how to export iterm2 profiles]: https://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles
+[iterm 2: how to set keyboard shortcuts to jump to beginning/end of line?]: https://stackoverflow.com/questions/6205157/iterm-2-how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line
