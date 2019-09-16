@@ -64,6 +64,7 @@ brew "ffmpeg"
 
 # Applications
 # ------------
+cask "1password"
 cask "alfred"
 cask "dash"
 cask "docker"
@@ -72,6 +73,7 @@ cask "firefox"
 cask "iterm2"
 cask "keybase"
 cask "monodraw"
+cask "slack"
 cask "spotify"
 cask "visual-studio-code"
 cask "vlc"

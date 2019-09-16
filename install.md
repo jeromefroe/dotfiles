@@ -2,13 +2,15 @@
 
 ## 0. Update System UX Settings
 
-* If scroll feels unnatural, update it by navigating to System Preferences > Trackpad > "Scroll
-Direction: Natural".
-* If applications icons continue to stay in the dock after quitting navigate to System
-Preferences > Dock > "Show recent applications in Dock".
-* To sync your iCloud account to your Mac navigate to System Preferences > iCloud and add
-your Apple account. Note that the passcode for your phone is the one you enter on the lock
-screen.
+- If scroll feels unnatural, update it by navigating to System Preferences > Trackpad > "Scroll
+  Direction: Natural".
+- If applications icons continue to stay in the dock after quitting navigate to System
+  Preferences > Dock > "Show recent applications in Dock".
+- To sync your iCloud account to your Mac navigate to System Preferences > iCloud and add
+  your Apple account. Note that the passcode for your phone is the one you enter on the lock
+  screen.
+- To ensure the Dock stays hidden except when you scroll over it go to System Preferences >
+  Dock > "Automatically hide and show the Dock".
 
 ## 1. Clone Dotfiles from Github
 
@@ -20,7 +22,11 @@ pretty safe assumption):
 
 ```bash
 mkdir -p ~/dev && cd ~/dev
-git clone git@github.com:jeromefroe/dotfiles.git
+
+# Since I haven't installed the SSH key I used for Github yet I need to clone the repo via HTTPS.
+# We'll change this later once we have download our SSH key.
+https://github.com/jeromefroe/dotfiles.git
+
 cd dotfiles
 ./configure.sh
 ```
@@ -63,6 +69,8 @@ and still managable. To install them, run the following:
 ```bash
 # Install scm_breeze
 git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
+source "$HOME/.scm_breeze/lib/scm_breeze.sh"
+_create_or_patch_scmbrc
 
 # Install mssh
 curl https://gist.githubusercontent.com/dgromov/350c6d80f65ba2bedf63ac168bcd788f/raw/d5f139a1cfeeb7a747aa5d09942ec31fdb79a757/mssh.py \
@@ -82,7 +90,7 @@ npm install -g catj
 
 ## 6. Sign into applications
 
-Some of the applications that we installed  require us to login in to them first. Fortunately,
+Some of the applications that we installed require us to login in to them first. Fortunately,
 LastPass makes the process pretty easy. One can use the LastPass CLI to get the username and
 password for each application or, alternatively, one can use the LastPass Chrome extension after
 signing into Chrome and LastPass respectively. If using the CLI to get one's credentials, one
@@ -99,149 +107,153 @@ lpass show --name <APPLICATION> --clip --password
 For each of the applications below I've added the name of the LastPass entity that the credentials
 are stored in.
 
-  1. Chrome (LastPass: 'Google')
-     * To add an account to Chrome navigate to People > Add Person. One can then go through the
-       standard two-factor authentication workflow of password + Google Authenticator code.
-  1. Dropbox (LastPass: 'Dropbox')
-  1. Spotify (LastPass: 'Spotify')
-  1. Messages (LastPass: 'Apple')
+1. Chrome (LastPass: 'Google')
+   - To add an account to Chrome navigate to People > Add Person. One can then go through the
+     standard two-factor authentication workflow of password + Google Authenticator code.
+1. Dropbox (LastPass: 'Dropbox')
+1. Spotify (LastPass: 'Spotify')
+1. Messages (LastPass: 'Apple')
 
 ## 7. Configure some stuff
 
-  1. Bash
+1. Bash
 
-     By default, Mac ships with an old version of `bash`. The `Brewfile` will install a newer
-     version (which supports command completion), but there are two additional steps we need
-     to complete to make the newer version of `bash` the default shell. First, we need to add
-     the path to the newer version of `bash` which Homebrew installs to the whitelist of shells
-     that can be used as login shells in `/etc/shells`. Once that step is complete we can actually
-     go ahead and make the newer `bash` the default for login shells. The steps come from the
-     blog post [Upgrading Bash on macOS] which dives into more detail on them.
+   By default, Mac ships with an old version of `bash`. The `Brewfile` will install a newer
+   version (which supports command completion), but there are two additional steps we need
+   to complete to make the newer version of `bash` the default shell. First, we need to add
+   the path to the newer version of `bash` which Homebrew installs to the whitelist of shells
+   that can be used as login shells in `/etc/shells`. Once that step is complete we can actually
+   go ahead and make the newer `bash` the default for login shells. The steps come from the
+   blog post [Upgrading Bash on macOS] which dives into more detail on them.
 
-     ```bash
-     echo '/usr/local/bin/bash' | sudo tee -a /etc/shells
-     sudo chsh -s /usr/local/bin/bash
-     ```
+   ```bash
+   echo '/usr/local/bin/bash' | sudo tee -a /etc/shells
+   sudo chsh -s /usr/local/bin/bash
+   ```
 
-  1. iTerm2
+1. iTerm2
 
-     To load our stored preferences, navigate to General > "Preferences and check Load Preferences
-     from a Custom folder or URL" and then select `~/dev/dotfiles/iterm`.
+   To load our stored preferences, navigate to General > "Preferences and check Load Preferences
+   from a Custom folder or URL" and then select `~/dev/dotfiles/iterm`.
 
-  1. Alfred
-     * Alfred requires a license to enable its Powerpack features. I store mine in LastPass so we
-       can retrieve it from via the CLI:
+1. Alfred
 
-       ```bash
-       lpass show Alfred --json | jq '.[].note' -r | jq '.powerpack_licenses.v4' -r | pbcopy
-       ```
-
-     * Once the license has been copied to our clipboard we can add it to Alfred by navigating to
-       Alfred Preferences > Powerpack.
-     * The last step required to finish configuring Alfred is to set the folder where our Alfred
-       preferences are stored. I sync my Alfred preferences to `~/dev/dotfiles/alfred`, so we want
-       tp navigate to Advanced > Set preferences and set the folder to the aforementioned directory.
-       Alfred also supports syncing to Dropbox, but that seems more applicable to people who use
-       multiple laptops regularly so keeping my Alfred preferences in my dotfiles repo has been
-       sufficient for me so far. It's worth noting also that [Alfred doesn't sync all settings],
-       they reason that some settings, such as one's Clipboard history, is specific to each
-       machine.
-
-  1. VS Code
-
-     Run the following command to install extensions:
+   - Alfred requires a license to enable its Powerpack features. I store mine in LastPass so we
+     can retrieve it from via the CLI:
 
      ```bash
-     cat ~/dev/dotfiles/vscode/extensions | xargs -I {} code --install-extension {}
+     lpass show Alfred --json | jq '.[].note' -r | jq '.powerpack_licenses.v4' -r | pbcopy
      ```
 
-     Run the following command to sync user settings:
+   - Once the license has been copied to our clipboard we can add it to Alfred by navigating to
+     Alfred Preferences > Powerpack.
+   - The last step required to finish configuring Alfred is to set the folder where our Alfred
+     preferences are stored. I sync my Alfred preferences to `~/dev/dotfiles/alfred`, so we want
+     to navigate to Advanced > Set preferences and set the folder to the aforementioned directory.
+     Alfred also supports syncing to Dropbox, but that seems more applicable to people who use
+     multiple laptops regularly so keeping my Alfred preferences in my dotfiles repo has been
+     sufficient for me so far. It's worth noting also that [Alfred doesn't sync all settings],
+     they reason that some settings, such as one's Clipboard history, is specific to each
+     machine.
+   - I also had to explicitly enable Clipboard history in Alfred by navigating to
+     "Preferences > Features > Clipboard" and selecting "Keep Plain Text". The Alfred Help page
+     [Why isn't my Clipboard History working?] contains further details.
 
-     ```bash
-     cp ~/dev/dotfiles/vscode/settings.json \
-       "$HOME/Library/Application Support/Code/User/settings.json"
-     ```
+1) VS Code
 
-     Run the following command to sync keybindings:
+   Run the following command to install extensions:
 
-     ```bash
-     cp ~/dev/dotfiles/vscode/keybindings.json \
-       "$HOME/Library/Application Support/Code/User/keybindings.json"
-     ```
+   ```bash
+   cat ~/dev/dotfiles/vscode/extensions | xargs -I {} code --install-extension {}
+   ```
 
-  1. Magnet
+   Run the following command to sync user settings:
 
-     Open application and follow instructions to authorize.
+   ```bash
+   cp ~/dev/dotfiles/vscode/settings.json \
+     "$HOME/Library/Application Support/Code/User/settings.json"
+   ```
 
-  1. Rust
+   Run the following command to sync keybindings:
 
-     Run the following command to initialize `rustup`: `rustup-init`. During initialization I
-     chose not to modify my `.bash_profile` to add Cargo's `bin` directory to my path since I've
-     aready done that.
+   ```bash
+   cp ~/dev/dotfiles/vscode/keybindings.json \
+     "$HOME/Library/Application Support/Code/User/keybindings.json"
+   ```
 
-  1. Google Cloud SDK
+1) Magnet
 
-     Run the following command initialize the Google Cloud SDK: `gcloud init`.
+   Open application and follow instructions to authorize.
 
-  1. AWS CLI
+1) Rust
 
-     The first step to configuring the AWS CLI is to download my credentials from LastPass into
-     the location expected by the AWS CLI. Once that's done we can run the `configure` command to
-     configure the CLI:
+   Run the following command to initialize `rustup`: `rustup-init`. During initialization I
+   chose not to modify my `.bash_profile` to add Cargo's `bin` directory to my path since I've
+   aready done that.
 
-     ```bash
-     mkdir -p ~/.aws
-     AWS_CREDS_KEY_ID=$(lpass show 'SSH Keys and Credentials' \
-       | grep 'aws_credentials.txt' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
-     lpass show 'SSH Keys and Credentials' --attach=$AWS_CREDS_KEY_ID > ~/.aws/credentials
-     aws configure
-     ```
+1) Google Cloud SDK
 
-  1. Spotify
+   Run the following command initialize the Google Cloud SDK: `gcloud init`.
 
-     I have a program to take backups of my Spotify playlists and it uses a client which has been
-     registed with Spotify to get access tokens to my account. The program assumes the credentials
-     for the Spotify client are stored at `~/.creds/spotify.json` so we need to grab them LastPass
-     and store them in that file.
+1) AWS CLI
 
-     ```bash
-     mkdir -p ~/.creds
-     lpass show Spotify --json | jq '.[].note' -r | jq . -r > ~/.creds/spotify.json
-     ```
+   The first step to configuring the AWS CLI is to download my credentials from LastPass into
+   the location expected by the AWS CLI. Once that's done we can run the `configure` command to
+   configure the CLI:
 
-  1. Git
+   ```bash
+   mkdir -p ~/.aws
+   AWS_CREDS_KEY_ID=$(lpass show 'SSH Keys and Credentials' \
+     | grep 'aws_credentials.txt' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
+   lpass show 'SSH Keys and Credentials' --attach=$AWS_CREDS_KEY_ID > ~/.aws/credentials
+   aws configure
+   ```
 
-      Run the following commands to set global Git configuration options. The first two commands
-      set the default email and name for commits respectively, the third command ensures that when
-      one runs `git push`, `git` will assume that the user is pushing the current branch, and the
-      fourth command configures the [`git-secrets`] plugin to check all commit for AWS credentials
-      which may have been added accidentally.
+1) Spotify
 
-      ```bash
-      git config --global user.email "email@example.com"
-      git config --global user.name "John Doe"
-      git config --global push.default current
-      git secrets --register-aws --global
-      ```
+   I have a program to take backups of my Spotify playlists and it uses a client which has been
+   registed with Spotify to get access tokens to my account. The program assumes the credentials
+   for the Spotify client are stored at `~/.creds/spotify.json` so we need to grab them LastPass
+   and store them in that file.
 
-  1. Docker
+   ```bash
+   mkdir -p ~/.creds
+   lpass show Spotify --json | jq '.[].note' -r | jq . -r > ~/.creds/spotify.json
+   ```
 
-      As discussed in [this Stack answer], one needs to open the Docker application after it is
-      installed by Homebrew since its needs sudo privileges. In addition, Homebrew doesn't
-      automatically include Docker's bash completion script so we need to grab it manually:
+1) Git
 
-      ```bash
-      curl -o /usr/local/etc/bash_completion.d/docker \
-        https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker
-      ```
+   Run the following commands to set global Git configuration options. The first two commands
+   set the default email and name for commits respectively, the third command ensures that when
+   one runs `git push`, `git` will assume that the user is pushing the current branch, and the
+   fourth command configures the [`git-secrets`] plugin to check all commit for AWS credentials
+   which may have been added accidentally.
 
-  1. Dash
+   ```bash
+   git config --global user.email "email@example.com"
+   git config --global user.name "John Doe"
+   git config --global push.default current
+   git secrets --register-aws --global
+   ```
 
-     Download Go, Rust, and Python 3 docs.
+1) Docker
 
-  1. Keybase
+   As discussed in [this Stack answer], one needs to open the Docker application after it is
+   installed by Homebrew since its needs sudo privileges. In addition, Homebrew doesn't
+   automatically include Docker's bash completion script so we need to grab it manually:
 
-     Open the Keybase application and follow the steps to add a new device to your account.
+   ```bash
+   curl -o /usr/local/etc/bash_completion.d/docker \
+     https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker
+   ```
+
+1) Dash
+
+   Download Go and Rust docs.
+
+1) Keybase
+
+   Open the Keybase application and follow the steps to add a new device to your account.
 
 ## 9. Get SSH Keys From LastPass
 
@@ -274,6 +286,10 @@ lpass show 'SSH Keys and Credentials' --attach=$GITHUB_PRIVATE_KEY_ID > ~/.ssh/g
 chmod 400 ~/.ssh/github
 chmod 400 ~/.ssh/github.pub
 ssh-add ~/.ssh/github
+
+# Update the URL of the dotfiles repo so we can use our SSH key to authenticate to Github.
+cd ~/dev/dotfiles/
+git remote set-url origin git@github.com:jeromefroe/dotfiles.git
 ```
 
 ## 10. Clean up old laptop
@@ -281,12 +297,12 @@ ssh-add ~/.ssh/github
 Some applications that I use are specific to a given device. For these applications it makes sense
 to revoke my old device once my new machine is setup:
 
-* Dropbox
-* iCloud
-* Keybase
+- Dropbox
+- iCloud
+- Keybase
 
-[Upgrading Bash on macOS]: https://itnext.io/upgrading-bash-on-macos-7138bd1066ba
-[Alfred doesn't sync all settings]: https://www.alfredapp.com/help/advanced/sync/
-[this Stack answer]:
-https://stackoverflow.com/questions/40523307/brew-install-docker-does-not-include-docker-engine#answer-43365425
+[upgrading bash on macos]: https://itnext.io/upgrading-bash-on-macos-7138bd1066ba
+[alfred doesn't sync all settings]: https://www.alfredapp.com/help/advanced/sync/
+[this stack answer]: https://stackoverflow.com/questions/40523307/brew-install-docker-does-not-include-docker-engine#answer-43365425
 [`git-secrets`]: https://github.com/awslabs/git-secrets
+[why isn't my clipboard history working?]: https://www.alfredapp.com/help/troubleshooting/clipboard-history/
