@@ -67,6 +67,7 @@ brew "ffmpeg"
 # Applications
 # ------------
 cask "1password"
+cask "1password-cli"
 cask "alfred"
 cask "dash"
 cask "docker"
