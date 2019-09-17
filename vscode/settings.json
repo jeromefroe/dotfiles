@@ -46,7 +46,7 @@
         "-l"
     ],
     "workbench.iconTheme": null,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     // TODO: Update this to nightly once it stabilizes.
     // See https://internals.rust-lang.org/t/nightlies-missing-the-rls-will-no-longer-be-produced/6653/4
     "rust-client.channel": "nightly",
@@ -72,5 +72,11 @@
     },
     "[python]": {},
     "prettier.singleQuote": true,
-    "bazel.buildifierFixOnFormat": true
+    "bazel.buildifierFixOnFormat": true,
+    "terraform.languageServer": {
+        "enabled": true
+    },
+    "terraform.indexing": {
+        "enabled": false
+    }
 }
