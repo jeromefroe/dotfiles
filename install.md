@@ -140,12 +140,6 @@ are stored in.
    ```bash
    cd ~
    direnv allow .
-
-   # Somewhat annoylingly, we also need to allow it in the dotfiles directory as well to avoid
-   # annoying messages from direnv warning that the .envrc is blocked since it hasn't been approved
-   # yet.
-   cd ~/dev/dotfiles
-   direnv allow .
    ```
 
 1. iTerm2
