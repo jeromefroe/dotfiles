@@ -24,7 +24,8 @@ pretty safe assumption):
 mkdir -p ~/dev && cd ~/dev
 
 # Since I haven't installed the SSH key I used for Github yet I need to clone the repo via HTTPS.
-# We'll change this later once we have download our SSH key.
+# We'll change this later once we have downloaded our SSH key. Alternatively, if one has already
+# logged into Github then one can just use the SSH download from the start.
 https://github.com/jeromefroe/dotfiles.git
 
 cd dotfiles
@@ -98,7 +99,7 @@ need only sign into LastPass first and then use the following commands to get th
 credentials for a given application:
 
 ```bash
-lpass login "email@example.com"
+lpass login "jeromefroelich@hotmail.com"
 
 lpass show --name <APPLICATION> --clip --username
 lpass show --name <APPLICATION> --clip --password
@@ -214,9 +215,7 @@ are stored in.
 
    ```bash
    mkdir -p ~/.aws
-   AWS_CREDS_KEY_ID=$(lpass show 'SSH Keys and Credentials' \
-     | grep 'aws_credentials.txt' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
-   lpass show 'SSH Keys and Credentials' --attach=$AWS_CREDS_KEY_ID > ~/.aws/credentials
+   lpass show 'AWS API Credentials' --json | jq -r '.[].note' > ~/.aws/credentials
    aws configure
    ```
 
@@ -269,37 +268,36 @@ are stored in.
 
    Open the Keybase application and follow the steps to add a new device to your account.
 
-## 9. Get SSH Keys From LastPass
+## 9. Get SSH Key From LastPass
 
-I store my SSH keys in LastPass so to download them one can use the LastPass CLI tool which
+I store my personal SSH key in LastPass, so to download it can use the LastPass CLI tool which
 was installed by Homebrew previously. The first step is to login, the following command will
 take you through the two-factor authentication workflow:
 
 ```bash
-lpass login "email@example.com"
+lpass login "jeromefroelich@hotmail.com"
 ```
 
-Once we've logged into LastPass we can use the CLI to get the LastPass ID's of our keys
-so we can install them locally:
+Once we've logged into LastPass we can get the public and private keys and install them locally:
 
 ```bash
-# I store my keys as attachments in a note called 'SSH Keys and Credentials' so the first thing we
-# need to do is get the ID's for the attchments.
-GITHUB_PUB_KEY_ID=$(lpass show 'SSH Keys and Credentials' \
-  | grep 'github.pub' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
-GITHUB_PRIVATE_KEY_ID=$(lpass show 'SSH Keys and Credentials' \
-  | grep 'github.key' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
+# I store my public and private keys as attachments in a note called 'Personal SSH Key' so the
+# first thing we need to do is get the ID's for the attchments.
+PERSONAL_PUB_KEY_ID=$(lpass show 'Personal SSH Key' \
+  | grep 'personal.pub' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
+PERSONAL_PRIVATE_KEY_ID=$(lpass show 'Personal SSH Key' \
+  | grep 'personal.key' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
 
 # Once we have the IDs of our keys we can retrieve them from LastPass and install them.
 mkdir ~/.ssh
-lpass show 'SSH Keys and Credentials' --attach=$GITHUB_PUB_KEY_ID > ~/.ssh/github.pub
-lpass show 'SSH Keys and Credentials' --attach=$GITHUB_PRIVATE_KEY_ID > ~/.ssh/github
+lpass show 'Personal SSH Key' --json | jq -r '.[].note' | jq -r '.public' | base64 -D > ~/.ssh/personal.pub
+lpass show 'Personal SSH Key' --json | jq -r '.[].note' | jq -r '.private' | base64 -D > ~/.ssh/personal
 
 # Finally, we need to set the correct permissions the files and can add our private key to
 # SSH agent.
-chmod 400 ~/.ssh/github
-chmod 400 ~/.ssh/github.pub
-ssh-add ~/.ssh/github
+chmod 400 ~/.ssh/personal
+chmod 400 ~/.ssh/personal.pub
+ssh-add ~/.ssh/personal
 
 # Update the URL of the dotfiles repo so we can use our SSH key to authenticate to Github.
 cd ~/dev/dotfiles/

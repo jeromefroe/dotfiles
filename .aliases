@@ -3,12 +3,23 @@
 #  Description:  This file holds all my Bash aliases.
 #
 #  Table of Contents:
-#  1.   Kubernetes
+#  1.   SSH
+#  2.   Kubernetes
 #
 #  ---------------------------------------------------------------------------
 
 #   -------------------------------
-#   1. Kubernetes
+#   1. SSH
+#   -------------------------------
+
+# SSH agent has a command line flag for how long a key should be added for but no configuration
+# file option. Since I don't want my keys to be added indefinitely I alias the command below to
+# ensure a timeout of 20 hours for any key I add. See the following StackOverflow post for more
+# details: https://unix.stackexchange.com/questions/122511/configuring-the-default-timeout-for-the-ssh-agent.
+alias ssh-add='ssh-add -t 20h'
+
+#   -------------------------------
+#   2. Kubernetes
 #   -------------------------------
 
 alias k='kubectl'
