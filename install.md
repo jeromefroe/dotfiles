@@ -268,27 +268,20 @@ are stored in.
 
    Open the Keybase application and follow the steps to add a new device to your account.
 
-## 9. Get SSH Key From LastPass
+## 9. Get SSH and GPG Key From LastPass
 
-I store my personal SSH key in LastPass, so to download it can use the LastPass CLI tool which
-was installed by Homebrew previously. The first step is to login, the following command will
-take you through the two-factor authentication workflow:
+I store my personal SSH and GPG keys in LastPass, so to download them I use the LastPass CLI tool.
+The first step is to login, the following command will take you through the two-factor
+authentication workflow:
 
 ```bash
 lpass login "jeromefroelich@hotmail.com"
 ```
 
-Once we've logged into LastPass we can get the public and private keys and install them locally:
+Once we've logged into LastPass we can install the keys locally, starting first with the SSH key:
 
 ```bash
-# I store my public and private keys as attachments in a note called 'Personal SSH Key' so the
-# first thing we need to do is get the ID's for the attchments.
-PERSONAL_PUB_KEY_ID=$(lpass show 'Personal SSH Key' \
-  | grep 'personal.pub' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
-PERSONAL_PRIVATE_KEY_ID=$(lpass show 'Personal SSH Key' \
-  | grep 'personal.key' | awk '{print $1}' | sed 's/[^a-z0-9-]*//g')
-
-# Once we have the IDs of our keys we can retrieve them from LastPass and install them.
+# Steps to install my SSH key.
 mkdir ~/.ssh
 lpass show 'Personal SSH Key' --json | jq -r '.[].note' | jq -r '.public' | base64 -D > ~/.ssh/personal.pub
 lpass show 'Personal SSH Key' --json | jq -r '.[].note' | jq -r '.private' | base64 -D > ~/.ssh/personal
@@ -302,6 +295,12 @@ ssh-add ~/.ssh/personal
 # Update the URL of the dotfiles repo so we can use our SSH key to authenticate to Github.
 cd ~/dev/dotfiles/
 git remote set-url origin git@github.com:jeromefroe/dotfiles.git
+
+# Steps to install my GPG key.
+cd ~
+lpass show 'Personal GPG Key' --json | jq -r '.[].note' | jq -r '.private' | base64 -D > personal.asc
+gpg --import personal.asc
+rm personal.asc
 ```
 
 ## 10. Clean up old laptop
