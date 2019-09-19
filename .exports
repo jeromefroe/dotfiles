@@ -15,7 +15,7 @@
 #   -------------------------------
 
 # Set requesite Gon environment variables.
-export GOPATH=$HOME/golang
+export GOPATH=$HOME/dev/go
 
 #   -------------------------------
 #   2. Python
