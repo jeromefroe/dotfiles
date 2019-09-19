@@ -78,5 +78,10 @@
     },
     "terraform.indexing": {
         "enabled": false
-    }
+    },
+    "go.useLanguageServer": true,
+    "prettier.disableLanguages": [
+        "vue",
+        "yaml"
+    ]
 }
