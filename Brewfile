@@ -15,23 +15,40 @@ brew "glide"
 # ----------
 brew "rustup"
 
+# Javascript Tools
+# ----------
+brew "node"
+brew "typescript"
+
+# Bash Tools
+# ----------
+brew "bash"
+brew "bash-completion@2"
+brew "shellcheck"
+brew "shfmt"
+
 # Kubernetes Tools
 # ----------------
 brew "kubernetes-cli"
-brew "kubectx"
 brew "kustomize"
+brew "kubectx"
 brew "jsonnet"
+brew "kube-ps1", args: ["HEAD"] # Install from HEAD for now to pick up PR #84 to fix PROMPT_COMMAND.
 
-# Install from HEAD for now to pick up PR #84 to fix PROMPT_COMMAND.
-brew "kube-ps1", args: ["HEAD"]
+# Terraform Tools
+# ----------------
+brew "tfenv"
+brew "tflint"
 
-# Binaries
-# --------
-brew "autojump"
+# Cloud Provider Tools
+# ----------------
 brew "awscli"
 brew "azure-cli"
-brew "bash"
-brew "bash-completion@2"
+cask "google-cloud-sdk"
+
+# Miscellaneous Tools
+# --------
+brew "autojump"
 brew "buildifier"
 brew "direnv"
 brew "fzf"
@@ -45,19 +62,11 @@ brew "htop"
 brew "jq"
 brew "lastpass-cli"
 brew "llvm"
-brew "node"
 brew "packer"
 brew "protobuf"
-brew "shellcheck"
-brew "shfmt"
-brew "tfenv"
-brew "tflint"
 brew "tig"
 brew "tree"
-brew "typescript"
 brew "youtube-dl"
-
-cask "google-cloud-sdk"
 
 # Dependencies for ripgrep-all, once a package exists for ripgrep-all itself I need to add
 # it here as well (it"s being tracked in https://github.com/phiresky/ripgrep-all/issues/9).
