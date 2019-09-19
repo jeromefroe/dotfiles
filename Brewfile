@@ -66,6 +66,7 @@ brew "packer"
 brew "protobuf"
 brew "tig"
 brew "tree"
+brew "watch"
 brew "youtube-dl"
 
 # Dependencies for ripgrep-all, once a package exists for ripgrep-all itself I need to add
