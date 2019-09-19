@@ -19,6 +19,7 @@ brew "rustup"
 # ----------------
 brew "kubernetes-cli"
 brew "kubectx"
+brew "kustomize"
 brew "jsonnet"
 
 # Install from HEAD for now to pick up PR #84 to fix PROMPT_COMMAND.
