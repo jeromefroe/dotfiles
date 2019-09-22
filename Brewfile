@@ -10,6 +10,7 @@ tap "homebrew/core"
 brew "go"
 brew "dep"
 brew "glide"
+brew "gomplate"
 
 # Rust Tools
 # ----------
