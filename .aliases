@@ -5,6 +5,7 @@
 #  Table of Contents:
 #  1.   SSH
 #  2.   Kubernetes
+#  3.   Retool
 #
 #  ---------------------------------------------------------------------------
 
@@ -23,3 +24,12 @@ alias ssh-add='ssh-add -t 20h'
 #   -------------------------------
 
 alias k='kubectl'
+
+#   -------------------------------
+#   2. Retool
+#   -------------------------------
+
+# retool is currently incompatible with Go modules so I use an alias to ensure the GO111MODULE
+# environment variable is set appropriately before running the command. For further details, see
+# https://github.com/twitchtv/retool/issues/51.
+alias retool='GO111MODULE=off retool'
