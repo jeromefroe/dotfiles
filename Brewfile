@@ -4,6 +4,7 @@ tap "caskroom/versions"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "go-swagger/go-swagger"
 
 # Go Tools
 # --------
@@ -11,6 +12,7 @@ brew "go"
 brew "dep"
 brew "glide"
 brew "gomplate"
+brew "go-swagger"
 
 # Rust Tools
 # ----------
