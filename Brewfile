@@ -15,6 +15,7 @@ brew "glide"
 brew "gomplate"
 brew "go-swagger"
 brew "golangci-lint"
+brew "golang-migrate"
 
 # Rust Tools
 # ----------
