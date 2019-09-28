@@ -3,7 +3,10 @@
     "go.lintOnSave": "package",
     "go.vetOnSave": "package",
     "go.buildFlags": [],
-    "go.lintFlags": [],
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ],
     "go.vetFlags": [],
     "go.testFlags": [
         "-v",
@@ -46,7 +49,7 @@
         "-l"
     ],
     "workbench.iconTheme": null,
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     // TODO: Update this to nightly once it stabilizes.
     // See https://internals.rust-lang.org/t/nightlies-missing-the-rls-will-no-longer-be-produced/6653/4
     "rust-client.channel": "nightly",
