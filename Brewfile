@@ -22,7 +22,7 @@ brew "golang-migrate"
 brew "rustup"
 
 # Javascript Tools
-# ----------
+# ----------------
 brew "node"
 brew "typescript"
 
@@ -42,18 +42,23 @@ brew "jsonnet"
 brew "kube-ps1", args: ["HEAD"] # Install from HEAD for now to pick up PR #84 to fix PROMPT_COMMAND.
 
 # Terraform Tools
-# ----------------
+# ---------------
 brew "tfenv"
 brew "tflint"
 
 # Cloud Provider Tools
-# ----------------
+# --------------------
 brew "awscli"
 brew "azure-cli"
 cask "google-cloud-sdk"
 
+# Databases
+# ---------
+brew "mysql"
+brew "postgresql"
+
 # Miscellaneous Tools
-# --------
+# -------------------
 brew "autojump"
 brew "buildifier"
 brew "direnv"
@@ -68,7 +73,6 @@ brew "htop"
 brew "jq"
 brew "lastpass-cli"
 brew "llvm"
-brew "mysql"
 brew "packer"
 brew "protobuf"
 brew "protoc-gen-go"
