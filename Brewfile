@@ -46,6 +46,12 @@ brew "kube-ps1", args: ["HEAD"] # Install from HEAD for now to pick up PR #84 to
 brew "tfenv"
 brew "tflint"
 
+# Protobuf Tools
+# --------------
+brew "protobuf"
+brew "protoc-gen-go"
+brew "prototool"
+
 # Cloud Provider Tools
 # --------------------
 brew "awscli"
@@ -74,13 +80,10 @@ brew "jq"
 brew "lastpass-cli"
 brew "llvm"
 brew "packer"
-brew "protobuf"
-brew "protoc-gen-go"
 brew "tig"
 brew "tree"
 brew "watch"
 brew "youtube-dl"
-
 brew "ripgrep"
 brew "rga"
 
