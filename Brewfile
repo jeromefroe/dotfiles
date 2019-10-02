@@ -80,11 +80,13 @@ brew "htop"
 brew "jq"
 brew "lastpass-cli"
 brew "llvm"
+brew "ngrep"
 brew "packer"
 brew "tig"
 brew "tree"
 brew "watch"
 brew "youtube-dl"
+
 brew "ripgrep"
 brew "rga"
 
