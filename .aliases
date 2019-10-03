@@ -24,6 +24,7 @@ alias ssh-add='ssh-add -t 20h'
 #   -------------------------------
 
 alias k='kubectl'
+alias kctx='kubectx'
 
 #   -------------------------------
 #   2. Retool
