@@ -87,8 +87,11 @@ brew "tree"
 brew "watch"
 brew "youtube-dl"
 
-brew "ripgrep"
-brew "rga"
+# Enhanced alternatives to common CLI tools written in Rust.
+brew "bat"     # `cat`
+brew "fd"      # `find`
+brew "ripgrep" # `grep`
+brew "rga"     # `ripgrep` with support for non-text files (e.g. PDF and Word documents).
 
 # Dependencies for ripgrep-all.
 brew "pandoc"
