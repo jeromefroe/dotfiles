@@ -6,6 +6,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "go-swagger/go-swagger"
 tap "golangci/tap"
+tap "puppetlabs/puppet"
 
 # Go Tools
 # --------
@@ -63,6 +64,11 @@ cask "google-cloud-sdk"
 # ---------
 brew "mysql"
 brew "postgresql"
+
+# Puppet Tools
+# ------------
+cask "pdk"
+cask "puppet-bolt"
 
 # Miscellaneous Tools
 # -------------------
