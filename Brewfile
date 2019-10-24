@@ -67,6 +67,7 @@ brew "postgresql"
 
 # Puppet Tools
 # ------------
+cask "pdk" # This package requires root access unfortunately.
 cask "puppet-bolt"
 
 # Miscellaneous Tools
