@@ -67,7 +67,6 @@ brew "postgresql"
 
 # Puppet Tools
 # ------------
-cask "pdk"
 cask "puppet-bolt"
 
 # Miscellaneous Tools
@@ -88,6 +87,7 @@ brew "lastpass-cli"
 brew "llvm"
 brew "ngrep"
 brew "packer"
+brew "prettier"
 brew "tig"
 brew "tree"
 brew "watch"
