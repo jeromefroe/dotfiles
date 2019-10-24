@@ -85,7 +85,8 @@ go get -u github.com/go-delve/delve/cmd/dlv
 # defaults to $GOPATH/bin, and I already include the latter in $PATH
 go get -u github.com/golang/protobuf/protoc-gen-go
 
-# Install catj
+# Install npm modules that do not have a corresponding Homebrew package.
+npm install -g markdownlint-cli
 npm install -g catj
 ```
 
