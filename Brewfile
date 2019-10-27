@@ -95,6 +95,9 @@ brew "watch"
 brew "youtube-dl"
 
 # Enhanced alternatives to common CLI tools written in Rust.
+#
+# The blog post https://www.wezm.net/technical/2019/10/useful-command-line-tools/ contains a handy
+# list of useful CLI tools, many of which are "enhanced" versions of old tools written in Rust.
 brew "bat"     # `cat`
 brew "fd"      # `find`
 brew "ripgrep" # `grep`
