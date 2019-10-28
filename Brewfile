@@ -70,6 +70,11 @@ brew "postgresql"
 cask "pdk" # This package requires root access unfortunately.
 cask "puppet-bolt"
 
+# Data Analysis Tools
+# -------------------
+brew "r"
+cask "rstudio"
+
 # Miscellaneous Tools
 # -------------------
 brew "autojump"
