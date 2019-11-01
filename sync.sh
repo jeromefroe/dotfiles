@@ -8,3 +8,7 @@ cp "$HOME/Library/Application Support/Code/User/keybindings.json" ~/dev/dotfiles
 code --list-extensions >~/dev/dotfiles/vscode/extensions
 
 echo "Successfully sync'ed VS Code settings"
+
+cp "$HOME/.rstudio-desktop/monitored/user-settings/user-settings" ~/dev/dotfiles/r
+
+echo "Successfully sync'ed RStudio settings"
