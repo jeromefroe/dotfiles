@@ -6,14 +6,12 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "go-swagger/go-swagger"
 tap "golangci/tap"
-tap "puppetlabs/puppet"
 
 # Go Tools
 # --------
 brew "go"
 brew "dep"
 brew "glide"
-brew "gomplate"
 brew "go-swagger"
 brew "golangci-lint"
 brew "golang-migrate"
@@ -27,6 +25,7 @@ brew "rustup"
 # ----------------
 brew "node"
 brew "typescript"
+brew "yarn"
 
 # Bash Tools
 # ----------
@@ -64,11 +63,6 @@ cask "google-cloud-sdk"
 # ---------
 brew "mysql"
 brew "postgresql"
-
-# Puppet Tools
-# ------------
-cask "pdk" # This package requires root access unfortunately.
-cask "puppet-bolt"
 
 # Data Analysis Tools
 # -------------------
