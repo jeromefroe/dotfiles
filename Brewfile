@@ -38,6 +38,7 @@ brew "shfmt"
 # ----------------
 brew "kubernetes-cli"
 brew "kustomize"
+brew "krew"
 brew "kubectx"
 brew "jsonnet"
 brew "kube-ps1", args: ["HEAD"] # Install from HEAD for now to pick up PR #84 to fix PROMPT_COMMAND.

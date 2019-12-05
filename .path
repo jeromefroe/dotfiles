@@ -5,6 +5,7 @@
 #  Table of Contents:
 #  1.   Go
 #  2.   Rust
+#  3.   Kubernetes
 #
 #  ---------------------------------------------------------------------------
 
@@ -19,3 +20,9 @@ export PATH=$PATH:$GOPATH/bin
 #   -------------------------------
 
 export PATH=$PATH:$HOME/.cargo/bin
+
+#   -------------------------------
+#   3. Kubernetes
+#   -------------------------------
+
+export PATH=$PATH:$HOME/.krew/bin

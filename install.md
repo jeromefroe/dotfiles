@@ -88,6 +88,10 @@ go get -u github.com/golang/protobuf/protoc-gen-go
 # Install npm modules that do not have a corresponding Homebrew package.
 npm install -g markdownlint-cli
 npm install -g catj
+
+# Install Kubernetes krew plugins
+kubectl krew install fleet
+kubectl krew install tail
 ```
 
 ## 6. Sign into applications
