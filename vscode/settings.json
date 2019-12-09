@@ -5,7 +5,8 @@
     "go.buildFlags": [],
     "go.lintTool": "golangci-lint",
     "go.lintFlags": [
-        "--fast"
+        "--fast",
+        "--disable=wsl"
     ],
     "go.vetFlags": [],
     "go.testFlags": [
