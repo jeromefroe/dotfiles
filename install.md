@@ -93,6 +93,9 @@ npm install -g catj
 kubectl krew install fleet
 kubectl krew install tail
 kubectl krew install resource-capacity
+kubectl krew install access-matrix
+kubectl krew install ctx
+kubectl krew install grep
 ```
 
 ## 6. Sign into applications
