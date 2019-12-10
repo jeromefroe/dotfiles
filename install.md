@@ -92,6 +92,7 @@ npm install -g catj
 # Install Kubernetes krew plugins
 kubectl krew install fleet
 kubectl krew install tail
+kubectl krew install resource-capacity
 ```
 
 ## 6. Sign into applications
