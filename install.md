@@ -96,6 +96,7 @@ kubectl krew install resource-capacity
 kubectl krew install access-matrix
 kubectl krew install ctx
 kubectl krew install grep
+kubectl krew install tree
 ```
 
 ## 6. Sign into applications
