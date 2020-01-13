@@ -93,6 +93,7 @@ brew "tig"
 brew "tree"
 brew "watch"
 brew "youtube-dl"
+cask "aws-vault"
 
 # Enhanced alternatives to common CLI tools written in Rust.
 #
