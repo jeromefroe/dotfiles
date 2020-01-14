@@ -2,6 +2,12 @@
 
 ## 0. Update System UX Settings
 
+- Make sure [FileVault is enabled] to ensure your hard drive is encrypted. Apple encourages
+  enabling it during setup but its worth double-checking by navigating to System Preferences >
+  Security & Privacy > FileVault. With FileVault, you'll need your login password in order to
+  decrypt data on your hard drive or, in the event that you forgot your password, the recovery code
+  you are given during setup. The recovery code should be securely backed up since if you lose both
+  your password and your recovery code you will be unable to decrypt your hard drive.
 - If scroll feels unnatural, update it by navigating to System Preferences > Trackpad > "Scroll
   Direction: Natural".
 - If applications icons continue to stay in the dock after quitting navigate to System
@@ -327,6 +333,7 @@ to revoke my old device once my new machine is setup:
 - iCloud
 - Keybase
 
+[filevault is enabled]: https://macpaw.com/how-to/use-filevault-disk-encryption
 [upgrading bash on macos]: https://itnext.io/upgrading-bash-on-macos-7138bd1066ba
 [alfred doesn't sync all settings]: https://www.alfredapp.com/help/advanced/sync/
 [this stack answer]: https://stackoverflow.com/questions/40523307/brew-install-docker-does-not-include-docker-engine#answer-43365425
