@@ -73,6 +73,7 @@ cask "rstudio"
 # Miscellaneous Tools
 # -------------------
 brew "autojump"
+brew "aws-iam-authenticator"
 brew "buildifier"
 brew "direnv"
 brew "fzf"
