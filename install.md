@@ -124,9 +124,7 @@ lpass show --name <APPLICATION> --clip --password
 For each of the applications below I've added the name of the LastPass entity that the credentials
 are stored in.
 
-1. Chrome (LastPass: 'Google')
-   - To add an account to Chrome navigate to People > Add Person. One can then go through the
-     standard two-factor authentication workflow of password + Google Authenticator code.
+1. Firefox (LastPass: 'Mozilla')
 1. Dropbox (LastPass: 'Dropbox')
 1. Spotify (LastPass: 'Spotify')
 1. Messages (LastPass: 'Apple')
@@ -231,7 +229,7 @@ are stored in.
 
    ```bash
    mkdir -p ~/.aws
-   lpass show 'AWS API Credentials' --json | jq -r '.[].note' > ~/.aws/credentials
+   lpass show 'AWS - Personal' --json | jq -r '.[].note' > ~/.aws/credentials
    aws configure
    ```
 
