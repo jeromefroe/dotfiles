@@ -85,5 +85,7 @@
     "go.useLanguageServer": true,
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-    }
+    },
+    "sqltools.formatLanguages": [],
+    "sql-formatter.uppercase": true
 }
