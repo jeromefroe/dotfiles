@@ -6,7 +6,8 @@
     "go.lintTool": "golangci-lint",
     "go.lintFlags": [
         "--fast",
-        "--disable=wsl"
+        "--disable=wsl",
+        "--disable=gomnd"
     ],
     "go.vetFlags": [],
     "go.testFlags": [
