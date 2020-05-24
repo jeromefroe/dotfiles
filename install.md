@@ -283,10 +283,6 @@ are stored in.
 
    Download Go and Rust docs.
 
-1) Keybase
-
-   Open the Keybase application and follow the steps to add a new device to your account.
-
 ## 9. Get SSH and GPG Key From LastPass
 
 I store my personal SSH and GPG keys in LastPass, so to download them I use the LastPass CLI tool.
