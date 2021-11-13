@@ -121,8 +121,8 @@ are stored in.
    blog post [Upgrading Bash on macOS] which dives into more detail on them.
 
    ```bash
-   echo '/usr/local/bin/bash' | sudo tee -a /etc/shells
-   sudo chsh -s /usr/local/bin/bash
+   echo '/opt/homebrew/bin/bash' | sudo tee -a /etc/shells
+   sudo chsh -s /opt/homebrew/bin/bash
    ```
 
 1. direnv
