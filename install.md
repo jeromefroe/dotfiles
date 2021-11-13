@@ -51,8 +51,12 @@ Install Homebrew with the following command:
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Follow the directions given to add Homebrew to your PATH
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+# Follow the directions given to add Homebrew to your PATH. Note that
+# until we make Bash the default shell Homebrew may show instructions
+# for zsh.
+#
+# TODO(jerome): Add this to .bash_profile?
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.bash_profile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
