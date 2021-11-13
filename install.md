@@ -32,7 +32,7 @@ mkdir -p ~/dev && cd ~/dev
 # Since I haven't installed the SSH key I used for Github yet I need to clone the repo via HTTPS.
 # We'll change this later once we have downloaded our SSH key. Alternatively, if one has already
 # logged into Github then one can just use the SSH download from the start.
-https://github.com/jeromefroe/dotfiles.git
+git clone https://github.com/jeromefroe/dotfiles.git
 
 cd dotfiles
 ./configure.sh

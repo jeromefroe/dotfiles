@@ -9,6 +9,7 @@
 #  4.   autojump
 #  5.   kube-ps1
 #  6.   direnv
+#  7.   pyenv
 #
 #  ---------------------------------------------------------------------------
 
@@ -69,3 +70,12 @@ source /usr/local/share/kube-ps1.sh
 # direnv adds a hook to the start of $PROMPT_COMMAND but that's okay because it saves and returns
 # the previous exit status so it is available to subsequent commands.
 eval "$(direnv hook bash)"
+
+
+#   -------------------------------
+#   7. pyenv
+#   -------------------------------
+
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init --path)"
+fi
