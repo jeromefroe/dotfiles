@@ -122,7 +122,7 @@ are stored in.
 
    ```bash
    echo '/opt/homebrew/bin/bash' | sudo tee -a /etc/shells
-   sudo chsh -s /opt/homebrew/bin/bash
+   chsh -s /opt/homebrew/bin/bash
    ```
 
 1. direnv
