@@ -254,10 +254,6 @@ are stored in.
      https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker
    ```
 
-1) Dash
-
-   Download Go and Rust docs.
-
 ## 9. Get SSH and GPG Key From LastPass
 
 I store my personal SSH and GPG keys in LastPass, so to download them I use the LastPass CLI tool.
@@ -300,7 +296,6 @@ to revoke my old device once my new machine is setup:
 
 - Dropbox
 - iCloud
-- Keybase
 
 [filevault is enabled]: https://macpaw.com/how-to/use-filevault-disk-encryption
 [upgrading bash on macos]: https://itnext.io/upgrading-bash-on-macos-7138bd1066ba
