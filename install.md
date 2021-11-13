@@ -50,6 +50,10 @@ Install Homebrew with the following command:
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Follow the directions given to add Homebrew to your PATH
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
 ## 3. Sign into Mac App Store
@@ -65,7 +69,7 @@ for it to install.
 
 ```bash
 cd ~/dev/dotfiles
-/opt/homebrew/bin/brew bundle
+brew bundle
 ```
 
 ## 5. Install non-Homebrew tools
