@@ -65,7 +65,7 @@ for it to install.
 
 ```bash
 cd ~/dev/dotfiles
-brew bundle
+/opt/homebrew/bin/brew bundle
 ```
 
 ## 5. Install non-Homebrew tools
@@ -78,31 +78,6 @@ and still managable. To install them, run the following:
 git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
 source "$HOME/.scm_breeze/lib/scm_breeze.sh"
 _create_or_patch_scmbrc
-
-# Install mssh
-curl https://gist.githubusercontent.com/dgromov/350c6d80f65ba2bedf63ac168bcd788f/raw/d5f139a1cfeeb7a747aa5d09942ec31fdb79a757/mssh.py \
- -o ~/dev/mssh.py
-chmod +x ~/dev/mssh.py
-
-# Install Delve
-go get -u github.com/go-delve/delve/cmd/dlv
-
-# Install protoc plugin for Go, this command will install the plugin to $GOBIN, which
-# defaults to $GOPATH/bin, and I already include the latter in $PATH
-go get -u github.com/golang/protobuf/protoc-gen-go
-
-# Install npm modules that do not have a corresponding Homebrew package.
-npm install -g markdownlint-cli
-npm install -g catj
-
-# Install Kubernetes krew plugins
-kubectl krew install fleet
-kubectl krew install tail
-kubectl krew install resource-capacity
-kubectl krew install access-matrix
-kubectl krew install ctx
-kubectl krew install grep
-kubectl krew install tree
 ```
 
 ## 6. Sign into applications
