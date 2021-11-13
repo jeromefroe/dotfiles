@@ -57,7 +57,6 @@ brew "prototool"
 # Cloud Provider Tools
 # --------------------
 brew "awscli"
-brew "azure-cli"
 cask "google-cloud-sdk"
 
 # Databases
@@ -81,7 +80,6 @@ brew "git-secrets"
 brew "gnupg"
 brew "graphviz"
 brew "grpcurl"
-brew "h3"
 brew "hh"
 brew "htop"
 brew "jq"
@@ -90,44 +88,24 @@ brew "llvm"
 brew "ngrep"
 brew "packer"
 brew "prettier"
-brew "tig"
 brew "tree"
 brew "watch"
 brew "youtube-dl"
 cask "aws-vault"
-
-# Enhanced alternatives to common CLI tools written in Rust.
-#
-# The blog post https://www.wezm.net/technical/2019/10/useful-command-line-tools/ contains a handy
-# list of useful CLI tools, many of which are "enhanced" versions of old tools written in Rust.
-brew "bat"     # `cat`
-brew "fd"      # `find`
-brew "ripgrep" # `grep`
-brew "rga"     # `ripgrep` with support for non-text files (e.g. PDF and Word documents).
-
-# Dependencies for ripgrep-all.
-brew "pandoc"
-brew "poppler"
-brew "tesseract"
-brew "ffmpeg"
 
 # Applications
 # ------------
 cask "1password"
 cask "1password-cli"
 cask "alfred"
-cask "dash"
 cask "docker"
 cask "dropbox"
 cask "firefox"
-cask "flux"
 cask "iterm2"
 cask "monodraw"
-cask "sequel-pro"
 cask "slack"
 cask "spotify"
 cask "visual-studio-code"
-cask "vlc"
 
 # App Store
 # ---------
