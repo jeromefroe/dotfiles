@@ -89,6 +89,7 @@ brew "llvm"
 brew "ngrep"
 brew "packer"
 brew "prettier"
+brew "ripgrep"
 brew "tree"
 brew "watch"
 brew "youtube-dl"
@@ -97,7 +98,8 @@ cask "aws-vault"
 # Applications
 # ------------
 cask "1password"
-cask "1password-cli"
+# Uncommenting for now so Homebrew doesn't try to upgrade to version 2.
+# cask "1password-cli"
 cask "alfred"
 cask "docker"
 cask "dropbox"
