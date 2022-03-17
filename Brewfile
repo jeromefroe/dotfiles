@@ -1,6 +1,6 @@
 # Taps
 # ----
-tap "caskroom/versions"
+tap "homebrew/cask-versions"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
@@ -41,7 +41,8 @@ brew "kustomize"
 brew "krew"
 brew "kubectx"
 brew "jsonnet"
-brew "kube-ps1", args: ["HEAD"] # Install from HEAD for now to pick up PR #84 to fix PROMPT_COMMAND.
+# I was unable to install this on an Apple Silicon machine
+# brew "kube-ps1", args: ["HEAD"] # Install from HEAD for now to pick up PR #84 to fix PROMPT_COMMAND.
 
 # Terraform Tools
 # ---------------
@@ -117,7 +118,7 @@ brew "mas"
 mas "Amphetamine", id: 937984704
 mas "Magnet", id: 441258766
 
-# Xcode takes a long time to install, when bringing up a new machine I would
-# recommend commenting the line below to skip installing initially so one could
-# set up the more important tools first.
-mas "Xcode", id: 497799835
+# Xcode takes a long time to install, when bringing up a new machine so I
+# comment out the line below by default to skip installing Xcode initially
+# and instead focus on setting up more important tools first.
+# mas "Xcode", id: 497799835

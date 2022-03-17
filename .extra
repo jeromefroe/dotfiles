@@ -3,26 +3,33 @@
 #  Description:  This file holds any extra Bash configuration I need to set.
 #
 #  Table of Contents:
-#  1.   SCM Breeze
-#  2.   HSTR
-#  3.   Bash Completion
-#  4.   autojump
-#  5.   kube-ps1
-#  6.   direnv
-#  7.   pyenv
+#  1.   Homebrew
+#  2.   SCM Breeze
+#  3.   HSTR
+#  4.   Bash Completion
+#  5.   autojump
+#  6.   kube-ps1
+#  7.   direnv
+#  8.   pyenv
 #
 #  ---------------------------------------------------------------------------
 
 #   -------------------------------
-#   1. SCM Breeze
+#   1. Homebrew
+#   -------------------------------
+
+[ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+#   -------------------------------
+#   2. SCM Breeze
 #   -------------------------------
 
 # Source SCM Breeze script to set aliases:
 # https://github.com/scmbreeze/scm_breeze#installation
-[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+[ -f "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
 #   -------------------------------
-#   2. HSTR
+#   3. HSTR
 #   -------------------------------
 #
 # Note that I changed the order of PROMPT_COMMAND to ensure that the history commands
@@ -35,45 +42,47 @@
 # variables are now prefixed with HSTR instead of HH.
 export HSTR_CONFIG="hicolor,raw-history-view"
 
-shopt -s histappend              # append new history items to .bash_history
-export HISTCONTROL=ignorespace   # leading space hides commands from history
-export HISTFILESIZE=100000       # increase history file size (default is 500)
-export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
-export PROMPT_COMMAND="${PROMPT_COMMAND}; history -a; history -n"   # mem/file sync
+shopt -s histappend                                               # append new history items to .bash_history
+export HISTCONTROL=ignorespace                                    # leading space hides commands from history
+export HISTFILESIZE=100000                                        # increase history file size (default is 500)
+export HISTSIZE=${HISTFILESIZE}                                   # increase history size (default is 500)
+export PROMPT_COMMAND="${PROMPT_COMMAND}; history -a; history -n" # mem/file sync
 
 # if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
 
 #   -------------------------------
-#   3. Bash Completion
+#   4. Bash Completion
 #   -------------------------------
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+[[ -r " /opt/homebrew/share/bash-completion/bash_completion" ]] && . " /opt/homebrew/share/bash-completion/bash_completion"
 
 #   -------------------------------
-#   4. autojump
+#   5. autojump
 #   -------------------------------
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/share/autojump/autojump.sh ] && . /opt/homebrew/share/autojump/autojump.sh
 
 #   -------------------------------
-#   5. kube-ps1
+#   6. kube-ps1
 #   -------------------------------
-source /usr/local/share/kube-ps1.sh
+[ -f "$HOME/.kube-ps1.sh/kube-ps1.sh.sh" ] && source "$HOME/.kube-ps1.sh/kube-ps1.sh.sh"
 
 # In the future, consider disabling the kube-ps1 prompt by default and using direnv
 # to only enable it for certain directories.
 # KUBE_PS1_ENABLED=off
 
 #   -------------------------------
-#   6. direnv
+#   7. direnv
 #   -------------------------------
 
 # direnv adds a hook to the start of $PROMPT_COMMAND but that's okay because it saves and returns
 # the previous exit status so it is available to subsequent commands.
-eval "$(direnv hook bash)"
 
+if command -v direnv 1>/dev/null 2>&1; then
+    eval "$(direnv hook bash)"
+fi
 
 #   -------------------------------
-#   7. pyenv
+#   8. pyenv
 #   -------------------------------
 
 if command -v pyenv 1>/dev/null 2>&1; then

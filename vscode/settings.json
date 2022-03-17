@@ -18,7 +18,6 @@
   "editor.rulers": [100],
   "editor.formatOnType": true,
   "editor.scrollBeyondLastLine": false,
-  "editor.renderIndentGuides": true,
   "editor.fontSize": 12,
   // "editor.renderWhitespace": true,
   "files.associations": {
@@ -39,7 +38,6 @@
   },
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "onFocusChange",
-  "terminal.integrated.shellArgs.osx": ["-l"],
   "workbench.iconTheme": null,
   "window.zoomLevel": 0,
   // TODO: Update this to nightly once it stabilizes.
@@ -55,8 +53,6 @@
     "suppressGitVersionWarning": false,
     "suppressLineUncommittedWarning": false,
     "suppressNoRepositoryWarning": false,
-    "suppressResultsExplorerNotice": false,
-    "suppressShowKeyBindingsNotice": true
   },
   "extensions.ignoreRecommendations": false,
   // Disable inline author details.
@@ -73,14 +69,12 @@
       "serve"
     ]
   },
-  "terraform.indexing": {
-    "enabled": false
-  },
   "go.useLanguageServer": true,
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
   "sqltools.formatLanguages": [],
   "sql-formatter.uppercase": true,
-  "go.testEnvFile": ""
+  "go.testEnvFile": "",
+  "terminal.integrated.defaultProfile.osx": "bash"
 }

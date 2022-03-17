@@ -159,8 +159,10 @@ __prompt_git() {
 __prompt_kube() {
 	local kube=""
 
-	kube="$(kube_ps1)"
-	[[ -n "$kube" ]] && echo " $kube"
+	if command -v kube_ps1 1>/dev/null 2>&1; then
+		kube="$(kube_ps1)"
+		[[ -n "$kube" ]] && echo " $kube"
+	fi
 }
 
 # __prompt_virtualenv indicates whether a Python virtualenv is active. It is adapated from

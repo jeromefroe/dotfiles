@@ -29,7 +29,7 @@ export PYTHONDONTWRITEBYTECODE=false
 #   -------------------------------
 
 # Set Bash completion directory so completion files are sourced automatically.
-export BASH_COMPLETION_COMPAT_DIR=/usr/local/etc/bash_completion.d/
+export BASH_COMPLETION_COMPAT_DIR=/opt/homebrew/share/bash-completion/completions
 
 #   -------------------------------
 #   4. Other

@@ -1,6 +1,6 @@
 # Laptop Recovery
 
-## 0. Update System UX Settings
+## 1. Update System UX Settings
 
 - Make sure [FileVault is enabled] to ensure your hard drive is encrypted. Apple encourages
   enabling it during setup but its worth double-checking by navigating to System Preferences >
@@ -17,8 +17,13 @@
   screen.
 - To ensure the Dock stays hidden except when you scroll over it go to System Preferences >
   Dock > "Automatically hide and show the Dock".
+- Install Rosetta2:
 
-## 1. Clone Dotfiles from Github
+  ```bash
+  softwareupdate --install-rosetta
+  ```
+
+## 2. Clone Dotfiles from Github
 
 My first step in configuring a new machine is to grab my dotfiles repo from Github since it
 contains all the scripts and configuration I need to setup a machine. My dotfiles repo
@@ -30,8 +35,9 @@ pretty safe assumption):
 mkdir -p ~/dev && cd ~/dev
 
 # Since I haven't installed the SSH key I used for Github yet I need to clone the repo via HTTPS.
-# We'll change this later once we have downloaded our SSH key. Alternatively, if one has already
-# logged into Github then one can just use the SSH download from the start.
+# This will be changed to SSH automatically later when we update our git configuration.
+# Alternatively, if one has already logged into Github then one can just use the SSH download from
+# the start.
 git clone https://github.com/jeromefroe/dotfiles.git
 
 cd dotfiles
@@ -44,7 +50,7 @@ but rather to add the contents of `.bash_profile` in this repo to the end of the
 isn't a big problem in practice because the repo is set up such that `.bash_profile` should
 be pretty simple and need only source the other files which are stored in this repo.
 
-## 2. Install Homebrew
+## 3. Install Homebrew
 
 Install Homebrew with the following command:
 
@@ -53,19 +59,18 @@ Install Homebrew with the following command:
 
 # Follow the directions given to add Homebrew to your PATH. Note that
 # until we make Bash the default shell Homebrew may show instructions
-# for zsh.
-#
-# TODO(jerome): Add this to .bash_profile?
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.bash_profile
+# for zsh. The following command is also run, indirectly, via our
+# `bash_profile` file but it is only run when `brew` has been installed
+# already.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-## 3. Sign into Mac App Store
+## 4. Sign into Mac App Store
 
 Before we use Homebrew to install our packages we need to sign into the Mac App Store
 as we use Homebrew to manage our Mac applications as well (for example, Alfred and Magnet).
 
-## 4. Install Homebrew packages
+## 5. Install Homebrew packages
 
 The next step is to use Homebrew to install our packages. Note that Xcode can take a long time
 so I'd recommend commenting out on the first run so that subsequent steps aren't stuck waiting
@@ -74,18 +79,6 @@ for it to install.
 ```bash
 cd ~/dev/dotfiles
 brew bundle
-```
-
-## 5. Install non-Homebrew tools
-
-There are some tools I use that do not have Homebrew packages. Fortunately, the number is small
-and still managable. To install them, run the following:
-
-```bash
-# Install scm_breeze
-git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
-source "$HOME/.scm_breeze/lib/scm_breeze.sh"
-_create_or_patch_scmbrc
 ```
 
 ## 6. Sign into applications
@@ -143,7 +136,8 @@ are stored in.
 1. iTerm2
 
    To load our stored preferences, navigate to General > "Preferences and check Load Preferences
-   from a Custom folder or URL" and then select `~/dev/dotfiles/iterm`.
+   from a Custom folder or URL" and then select `~/dev/dotfiles/iterm`. Then quit and restart
+   iTerm to pick up the preferences.
 
 1. Alfred
 
@@ -258,7 +252,7 @@ are stored in.
    automatically include Docker's bash completion script so we need to grab it manually:
 
    ```bash
-   curl -o /usr/local/etc/bash_completion.d/docker \
+   curl -o /opt/homebrew/share/bash-completion/completions/docker \
      https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker
    ```
 
@@ -287,8 +281,10 @@ chmod 400 ~/.ssh/personal.pub
 ssh-add ~/.ssh/personal
 
 # Update the URL of the dotfiles repo so we can use our SSH key to authenticate to Github.
-cd ~/dev/dotfiles/
-git remote set-url origin git@github.com:jeromefroe/dotfiles.git
+# This should actually be unnecessary because it's taken care of when we update the git
+# configuration.
+# cd ~/dev/dotfiles/
+# git remote set-url origin git@github.com:jeromefroe/dotfiles.git
 
 # Steps to install my GPG key.
 cd ~
@@ -297,7 +293,23 @@ gpg --import personal.asc
 rm personal.asc
 ```
 
-## 10. Clean up old laptop
+## 10. Install non-Homebrew tools
+
+There are some tools I use that do not have Homebrew packages (or have a package that I'm unable
+to use in the case of `kube-ps1`). Fortunately, the number is small and still managable. To install
+them, run the following:
+
+```bash
+# Install scm_breeze
+git clone git@github.com:scmbreeze/scm_breeze.git ~/.scm_breeze
+source "$HOME/.scm_breeze/lib/scm_breeze.sh"
+_create_or_patch_scmbrc
+
+# Install kube-ps1
+git clone git@github.com:jonmosco/kube-ps1.git ~/.kube-ps1
+```
+
+## 11. Clean up old laptop
 
 Some applications that I use are specific to a given device. For these applications it makes sense
 to revoke my old device once my new machine is setup:
