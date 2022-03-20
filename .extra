@@ -64,7 +64,7 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
 #   -------------------------------
 #   6. kube-ps1
 #   -------------------------------
-[ -f "$HOME/.kube-ps1.sh/kube-ps1.sh.sh" ] && source "$HOME/.kube-ps1.sh/kube-ps1.sh.sh"
+[ -f "$HOME/.kube-ps1/kube-ps1.sh" ] && source "$HOME/.kube-ps1/kube-ps1.sh"
 
 # In the future, consider disabling the kube-ps1 prompt by default and using direnv
 # to only enable it for certain directories.
