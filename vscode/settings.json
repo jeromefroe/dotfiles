@@ -11,6 +11,9 @@
   "go.coverOnSave": false,
   "go.useCodeSnippetsOnFunctionSuggest": false,
   "go.formatTool": "goimports",
+  "go.alternateTools": {
+    "go": "/opt/homebrew/bin/go"
+  },
   "editor.cursorBlinking": "smooth",
   "editor.tabSize": 2,
   "editor.glyphMargin": true,
