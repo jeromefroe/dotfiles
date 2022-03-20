@@ -31,6 +31,9 @@ export PYTHONDONTWRITEBYTECODE=false
 # Set Bash completion directory so completion files are sourced automatically.
 export BASH_COMPLETION_COMPAT_DIR=/opt/homebrew/share/bash-completion/completions
 
+# Don't print the warning about zsh being the default shell.
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 #   -------------------------------
 #   4. Other
 #   -------------------------------
