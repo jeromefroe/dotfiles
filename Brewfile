@@ -94,6 +94,8 @@ brew "sops"
 brew "tree"
 brew "watch"
 brew "youtube-dl"
+brew "yq"
+
 cask "aws-vault"
 
 # Applications
