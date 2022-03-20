@@ -34,6 +34,9 @@ export BASH_COMPLETION_COMPAT_DIR=/opt/homebrew/share/bash-completion/completion
 # Don't print the warning about zsh being the default shell.
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+# Set the default shell to bash.
+export SHELL=/bin/bash
+
 #   -------------------------------
 #   4. Other
 #   -------------------------------
