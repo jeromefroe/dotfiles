@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>iamstevendao.alfred-open-with-vscode</string>
+	<key>category</key>
+	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
 		<key>D97234CC-4D00-4B8D-A115-5919C89B2B02</key>
