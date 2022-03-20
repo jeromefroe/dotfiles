@@ -39,7 +39,6 @@
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "onFocusChange",
   "workbench.iconTheme": null,
-  "window.zoomLevel": 0,
   // TODO: Update this to nightly once it stabilizes.
   // See https://internals.rust-lang.org/t/nightlies-missing-the-rls-will-no-longer-be-produced/6653/4
   "rust-client.channel": "nightly",
@@ -52,7 +51,7 @@
     "suppressFileNotUnderSourceControlWarning": false,
     "suppressGitVersionWarning": false,
     "suppressLineUncommittedWarning": false,
-    "suppressNoRepositoryWarning": false,
+    "suppressNoRepositoryWarning": false
   },
   "extensions.ignoreRecommendations": false,
   // Disable inline author details.
@@ -65,9 +64,7 @@
   "bazel.buildifierFixOnFormat": true,
   "terraform.languageServer": {
     "external": true,
-    "args": [
-      "serve"
-    ]
+    "args": ["serve"]
   },
   "go.useLanguageServer": true,
   "[dockerfile]": {
@@ -76,5 +73,10 @@
   "sqltools.formatLanguages": [],
   "sql-formatter.uppercase": true,
   "go.testEnvFile": "",
-  "terminal.integrated.defaultProfile.osx": "bash"
+  "terminal.integrated.defaultProfile.osx": "bash",
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "shellcheck.executablePath": "/opt/homebrew/bin/shellcheck",
+  "bazel.buildifierExecutable": "/opt/homebrew/bin/buildifier"
 }
