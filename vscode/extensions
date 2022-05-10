@@ -1,3 +1,4 @@
+4ops.packer
 adpyke.vscode-sql-formatter
 BazelBuild.vscode-bazel
 bungcip.better-toml
@@ -7,6 +8,7 @@ dbaeumer.vscode-eslint
 donjayamanne.githistory
 dsznajder.es7-react-js-snippets
 eamodio.gitlens
+earthly.earthfile-syntax-highlighting
 esbenp.prettier-vscode
 foxundermoon.shell-format
 golang.go
@@ -16,6 +18,7 @@ mechatroner.rainbow-csv
 ms-azuretools.vscode-docker
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.python
+ms-python.vscode-pylance
 mtxr.sqltools
 mushan.vscode-paste-image
 phgn.vscode-starlark
@@ -27,4 +30,5 @@ timonwong.shellcheck
 tomoki1207.pdf
 tsandall.opa
 wingrunr21.vscode-ruby
+withfig.fig
 zxh404.vscode-proto3
