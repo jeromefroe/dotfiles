@@ -1,4 +1,5 @@
 {
+  // Go
   "go.buildOnSave": "package",
   "go.lintOnSave": "package",
   "go.vetOnSave": "package",
@@ -14,6 +15,46 @@
   "go.alternateTools": {
     "go": "/opt/homebrew/bin/go"
   },
+  "go.useLanguageServer": true,
+  "go.testEnvFile": "",
+  // Terraform
+  "terraform.languageServer": {
+    "external": true,
+    "args": ["serve"]
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
+  },
+  // Rust
+  "rust-client.channel": "nightly",
+  // Bazel
+  "bazel.buildifierExecutable": "/opt/homebrew/bin/buildifier",
+  "bazel.buildifierFixOnFormat": true,
+  // Shellcheck
+  "shellcheck.executablePath": "/opt/homebrew/bin/shellcheck",
+  // SQL
+  "sqltools.formatLanguages": [],
+  "sql-formatter.uppercase": true,
+  // YAML
+  "yaml.schemas": {
+    "kubernetes": "manifests/*"
+  },
+  // Docker
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  // Markdown
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // Other
   "editor.cursorBlinking": "smooth",
   "editor.tabSize": 2,
   "editor.glyphMargin": true,
@@ -22,7 +63,8 @@
   "editor.formatOnType": true,
   "editor.scrollBeyondLastLine": false,
   "editor.fontSize": 12,
-  // "editor.renderWhitespace": true,
+  "editor.formatOnSave": true,
+  "editor.accessibilitySupport": "off",
   "files.associations": {
     "*.star": "starlark"
   },
@@ -42,11 +84,6 @@
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "onFocusChange",
   "workbench.iconTheme": null,
-  // TODO: Update this to nightly once it stabilizes.
-  // See https://internals.rust-lang.org/t/nightlies-missing-the-rls-will-no-longer-be-produced/6653/4
-  "rust-client.channel": "nightly",
-  // Need to enable this to ensure rustfmt is run on save.
-  "editor.formatOnSave": true,
   "gitlens.keymap": "chorded",
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
@@ -57,29 +94,8 @@
     "suppressNoRepositoryWarning": false
   },
   "extensions.ignoreRecommendations": false,
-  // Disable inline author details.
-  // "gitlens.codeLens.enabled": false,
-  // Validation for Kubernetes manifests
-  "yaml.schemas": {
-    "kubernetes": "manifests/*"
-  },
-  "[python]": {},
-  "bazel.buildifierFixOnFormat": true,
-  "terraform.languageServer": {
-    "external": true,
-    "args": ["serve"]
-  },
-  "go.useLanguageServer": true,
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
-  "sqltools.formatLanguages": [],
-  "sql-formatter.uppercase": true,
-  "go.testEnvFile": "",
   "terminal.integrated.defaultProfile.osx": "bash",
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "shellcheck.executablePath": "/opt/homebrew/bin/shellcheck",
-  "bazel.buildifierExecutable": "/opt/homebrew/bin/buildifier"
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  }
 }
