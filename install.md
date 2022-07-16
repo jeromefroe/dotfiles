@@ -145,7 +145,7 @@ are stored in.
      can retrieve it from via the CLI:
 
      ```bash
-     lpass show Alfred --json | jq '.[].note' -r | jq '.powerpack_licenses.v4' -r | pbcopy
+     lpass show Alfred --json | jq '.[].note' -r | jq '.powerpack_licenses.v5' -r | pbcopy
      ```
 
    - Once the license has been copied to our clipboard we can add it to Alfred by navigating to
