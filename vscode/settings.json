@@ -94,5 +94,10 @@
   "terminal.integrated.defaultProfile.osx": "bash",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  // Disable gopls colorizations.
+  "gopls": {
+    "ui.semanticTokens": false
   }
 }
