@@ -10,7 +10,6 @@ tap "golangci/tap"
 # Go Tools
 # --------
 brew "go"
-brew "dep"
 brew "glide"
 brew "go-swagger"
 brew "golangci-lint"
@@ -53,7 +52,6 @@ brew "tflint"
 # --------------
 brew "protobuf"
 brew "protoc-gen-go"
-brew "prototool"
 
 # Cloud Provider Tools
 # --------------------
