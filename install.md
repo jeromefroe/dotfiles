@@ -55,7 +55,7 @@ be pretty simple and need only source the other files which are stored in this r
 Install Homebrew with the following command:
 
 ```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Follow the directions given to add Homebrew to your PATH. Note that
 # until we make Bash the default shell Homebrew may show instructions
