@@ -63,18 +63,6 @@ details the difference between `brew` and `brew cask`. `brew` is the core comman
 project and is primarliy used to install command line software. Cask is an extension to Homebrew
 which allows for the management of graphical applications.
 
-## iTerm2
-
-After following the steps in `install.md` iTerm2 will be configured to save its profiles to
-the `iterm` directory. Any time a change is made to iTerm2 the changes should be synced to
-the directory by hitting the "Save Current Settings to Folder" button on the General page.
-See the Stack question [How to export iTerm2 Profiles] for more information on saving iTerm2
-profiles.
-
-I like to set a few extra keybindings for iTerm to make it feel more like other Mac applications.
-The StackOverflow post [iTerm 2: How to set keyboard shortcuts to jump to beginning/end of line?]
-covers a lot of the most common keybindings.
-
 ## Visual Studio Code
 
 I like to save my VS Code settings, keybindings, and extensions. The settings and keybindings
@@ -107,5 +95,3 @@ VS Code configuration to the `vscode` directory.
 [restore, clone or backup your homebrew setup]: https://tomlankhorst.nl/brew-bundle-restore-backup/
 [this stackexchange answer]: https://apple.stackexchange.com/questions/101090/list-of-all-packages-installed-using-homebrew
 [what is the difference between brew install xxx and brew cask install xxx]: https://stackoverflow.com/questions/46403937/what-is-the-difference-between-brew-install-xxx-and-brew-cask-install-xxx
-[how to export iterm2 profiles]: https://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles
-[iterm 2: how to set keyboard shortcuts to jump to beginning/end of line?]: https://stackoverflow.com/questions/6205157/iterm-2-how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line

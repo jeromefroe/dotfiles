@@ -70,12 +70,6 @@ brew bundle
    chsh -s /opt/homebrew/bin/bash
    ```
 
-1. iTerm2
-
-   To load our stored preferences, navigate to General > "Preferences and check Load Preferences
-   from a Custom folder or URL" and then select `~/dev/dotfiles/iterm`. Then quit and restart
-   iTerm to pick up the preferences.
-
 1. Alfred
    - Alfred requires a license to enable its Powerpack features. I store mine in LastPass so we
      can retrieve it from via the CLI:
