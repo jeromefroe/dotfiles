@@ -3,26 +3,5 @@
 #  Description:  This file holds all my Bash PATH updates.
 #
 #  Table of Contents:
-#  1.   Go
-#  2.   Rust
-#  3.   Kubernetes
 #
 #  ---------------------------------------------------------------------------
-
-#   -------------------------------
-#   1. Go
-#   -------------------------------
-
-export PATH=$PATH:$GOPATH/bin
-
-#   -------------------------------
-#   2. Rust
-#   -------------------------------
-
-export PATH=$PATH:$HOME/.cargo/bin
-
-#   -------------------------------
-#   3. Kubernetes
-#   -------------------------------
-
-export PATH=$PATH:$HOME/.krew/bin

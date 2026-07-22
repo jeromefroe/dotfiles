@@ -10,7 +10,6 @@
 #  5.   autojump
 #  6.   kube-ps1
 #  7.   direnv
-#  8.   pyenv
 #
 #  ---------------------------------------------------------------------------
 
@@ -79,12 +78,4 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
 
 if command -v direnv 1> /dev/null 2>&1; then
   eval "$(direnv hook bash)"
-fi
-
-#   -------------------------------
-#   8. pyenv
-#   -------------------------------
-
-if command -v pyenv 1> /dev/null 2>&1; then
-  eval "$(pyenv init --path)"
 fi
