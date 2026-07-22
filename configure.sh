@@ -20,7 +20,7 @@ function get_target() {
   esac
 }
 
-for file in {.path,.bash_prompt,.exports,.aliases,.functions,.extra,.vim,.vimrc,.bash_profile,envrc,gpg-agent.conf}; do
+for file in {.path,.bash_prompt,.exports,.aliases,.extra,.bash_profile,envrc,gpg-agent.conf}; do
   source_file="$HOME/dev/dotfiles/$file"
   target_file=$(get_target $file)
 

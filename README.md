@@ -15,13 +15,7 @@ The dotfiles I use to configure my shell are organized into the following bash f
 - `.envrc` - Sane global defaults.
 - `.exports` - Exported variables.
 - `.extra` - Miscellaneous commands to run.
-- `.functions` - Bash functions.
 - `.path` - Additional directories added to my PATH.
-
-And the following Vim files and directories:
-
-- `.vim` - Vim plugin directory.
-- `.vimrc` - Vim configuration.
 
 The script `configure.sh` assumes the above files are in the directory `$HOME/dev/dotfile`
 and will create a soft link to them from one's home directory (`$HOME`).
