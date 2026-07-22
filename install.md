@@ -106,10 +106,6 @@ brew bundle
      "$HOME/Library/Application Support/Code/User/keybindings.json"
    ```
 
-1) Magnet
-
-   Open application and follow instructions to authorize.
-
 1) Git
 
    Run the following commands to set global Git configuration options. The first two commands
@@ -129,6 +125,13 @@ brew bundle
    git config --global push.default current
    git config --global --add url."git@github.com:".insteadOf "https://github.com/"
    ```
+
+1) Window Tiling Shortcuts
+
+   Go to System Settings > Keyboard > Keyboard Shortcuts > Windows. I like to use
+   Control + Option + Up/Down/Left/Right to move a window to the corresponding location on the
+   screen and Control + Option + Enter to fill the screen (these were the shortcuts I got used
+   to from the Magnet app before Mac supported window tiling shortcuts).
 
 ## 5. Get SSH and GPG Key From LastPass
 
