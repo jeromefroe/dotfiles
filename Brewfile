@@ -4,7 +4,6 @@ tap "homebrew/cask-versions"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
-tap "golangci/tap"
 
 # Go Tools
 # --------
@@ -14,7 +13,6 @@ brew "go"
 # ----------
 brew "bash"
 brew "bash-completion@2"
-brew "shfmt"
 
 # Kubernetes Tools
 # ----------------
