@@ -5,15 +5,19 @@
   "go.vetOnSave": "package",
   "go.buildFlags": [],
   "go.lintTool": "golangci-lint",
-  "go.lintFlags": ["--fast", "--disable=wsl", "--disable=gomnd"],
+  "go.lintFlags": [
+    "--fast",
+    "--disable=wsl",
+    "--disable=gomnd",
+    "--disable=perfsprint",
+  ],
   "go.vetFlags": [],
   "go.testFlags": ["-v"],
-  "go.testTimeout": "10s",
+  "go.testTimeout": "15s",
   "go.coverOnSave": false,
-  "go.useCodeSnippetsOnFunctionSuggest": false,
   "go.formatTool": "goimports",
   "go.alternateTools": {
-    "go": "/opt/homebrew/bin/go"
+    "go": "/opt/homebrew/bin/go",
   },
   "go.useLanguageServer": true,
   "go.testEnvFile": "",
@@ -21,15 +25,13 @@
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform",
     "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "file"
+    "editor.formatOnSaveMode": "file",
   },
   "[terraform-vars]": {
     "editor.defaultFormatter": "hashicorp.terraform",
     "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "file"
+    "editor.formatOnSaveMode": "file",
   },
-  // Rust
-  "rust-client.channel": "nightly",
   // Bazel
   "bazel.buildifierExecutable": "/opt/homebrew/bin/buildifier",
   "bazel.buildifierFixOnFormat": true,
@@ -40,15 +42,15 @@
   "sql-formatter.uppercase": true,
   // YAML
   "yaml.schemas": {
-    "kubernetes": "manifests/*"
+    "kubernetes": "manifests/*",
   },
   // Docker
   "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker",
   },
   // Markdown
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   // Other
   "editor.cursorBlinking": "smooth",
@@ -63,7 +65,7 @@
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": false,
   "files.associations": {
-    "*.star": "starlark"
+    "*.star": "starlark",
   },
   "files.exclude": {
     "**/.tmp": true,
@@ -76,7 +78,7 @@
     "**/*.test": true,
     "Godeps/_workspace": true,
     "**/coverage.html": true,
-    "**/_build": true
+    "**/_build": true,
   },
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "onFocusChange",
@@ -88,16 +90,62 @@
     "suppressFileNotUnderSourceControlWarning": false,
     "suppressGitVersionWarning": false,
     "suppressLineUncommittedWarning": false,
-    "suppressNoRepositoryWarning": false
+    "suppressNoRepositoryWarning": false,
   },
   "extensions.ignoreRecommendations": false,
   "terminal.integrated.defaultProfile.osx": "bash",
   "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
+    "FIG_NEW_SESSION": "1",
   },
   "go.toolsManagement.autoUpdate": true,
   // Disable gopls colorizations.
   "gopls": {
-    "ui.semanticTokens": false
-  }
+    "ui.semanticTokens": false,
+  },
+  "terraform.languageServer.terraform.path": "/opt/homebrew/bin/terraform",
+  "shellformat.flag": "-i 2 --binary-next-line --space-redirects",
+  "extensions.autoCheckUpdates": false,
+  "go.buildTags": "big,integration,cluster_integration",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "js/ts.implicitProjectConfig.module": "NodeNext",
+
+  "claudeCode.preferredLocation": "panel",
+  "claudeCode.disableLoginPrompt": true,
+  "claudeCode.environmentVariables": [
+    {
+      "name": "CLAUDE_CODE_USE_VERTEX",
+      "value": "1",
+    },
+    {
+      "name": "CLOUD_ML_REGION",
+      "value": "global",
+    },
+    {
+      "name": "ANTHROPIC_VERTEX_PROJECT_ID",
+      "value": "chronosphere-claude-code",
+    },
+    {
+      "name": "ANTHROPIC_MODEL",
+      "value": "claude-fable-5",
+    },
+    {
+      "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL",
+      "value": "claude-haiku-4-5@20251001",
+    },
+    {
+      "name": "CLAUDE_CODE_ENABLE_AUTO_MODE",
+      "value": "1",
+    },
+  ],
+  "editor.inlineSuggest.enabled": true,
+  "githubPullRequests.terminalLinksHandler": "github",
+  "githubPullRequests.pullBranch": "never",
+  "workbench.colorTheme": "Solarized Light",
+  "js/ts.tsdk.path": "ui/node_modules/typescript/lib",
+  "terminal.integrated.initialHint": false,
 }
