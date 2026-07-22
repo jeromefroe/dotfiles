@@ -12,7 +12,6 @@ The dotfiles I use to configure my shell are organized into the following bash f
 - `.aliases` - Bash aliases.
 - `.bash_profile` - Bash profile.
 - `.bash_prompt` - Bash prompt.
-- `.envrc` - Sane global defaults.
 - `.exports` - Exported variables.
 - `.extra` - Miscellaneous commands to run.
 - `.path` - Additional directories added to my PATH.

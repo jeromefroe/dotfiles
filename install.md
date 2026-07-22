@@ -70,17 +70,6 @@ brew bundle
    chsh -s /opt/homebrew/bin/bash
    ```
 
-1. direnv
-
-   The `configure.sh` script installs a `.envrc` in my home directory which contains some sane
-   defaults for various tools that I expect may be overridden in subdirectories as necessary. `direnv`
-   requires that the user first allows a `.envrc` in a given directory so we do that below:
-
-   ```bash
-   cd ~
-   direnv allow .
-   ```
-
 1. iTerm2
 
    To load our stored preferences, navigate to General > "Preferences and check Load Preferences
