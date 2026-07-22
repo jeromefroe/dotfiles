@@ -80,14 +80,6 @@ brew bundle
 
    - Once the license has been copied to our clipboard we can add it to Alfred by navigating to
      Alfred Preferences > Powerpack.
-   - The last step required to finish configuring Alfred is to set the folder where our Alfred
-     preferences are stored. I sync my Alfred preferences to `~/dev/dotfiles/alfred`, so we want
-     to navigate to Advanced > Set preferences and set the folder to the aforementioned directory.
-     Alfred also supports syncing to Dropbox, but that seems more applicable to people who use
-     multiple laptops regularly so keeping my Alfred preferences in my dotfiles repo has been
-     sufficient for me so far. It's worth noting also that [Alfred doesn't sync all settings],
-     they reason that some settings, such as one's Clipboard history, is specific to each
-     machine.
    - I also had to explicitly enable Clipboard history in Alfred by navigating to
      "Preferences > Features > Clipboard" and selecting "Keep Plain Text". The Alfred Help page
      [Why isn't my Clipboard History working?] contains further details.
@@ -192,7 +184,6 @@ git clone git@github.com:jonmosco/kube-ps1.git ~/.kube-ps1
 ```
 
 [upgrading bash on macos]: https://itnext.io/upgrading-bash-on-macos-7138bd1066ba
-[alfred doesn't sync all settings]: https://www.alfredapp.com/help/advanced/sync/
 [this is often a problem for go dependencies for example]: http://albertech.blogspot.com/2016/11/fix-git-error-could-not-read-username.html
 [why isn't my clipboard history working?]: https://www.alfredapp.com/help/troubleshooting/clipboard-history/
 [set the `git_author_email` and `git_committer_email` environment variables]: https://git-scm.com/docs/git-config#Documentation/git-config.txt-committeremail
